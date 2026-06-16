@@ -1,0 +1,1585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Infra Power System — Agricultural Electrical Solutions</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--g:#00e87a;--g2:#00c463;--gd:#003d20;--p:#7c3aed;--bl:#0ea5e9;--dk:#050a07;--cd:#0a1a0e;--sf:#0f2415;--tx:#e8f5ee;--mt:#6b9e7d;--bd:#1a3a24;--am:#f59e0b}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{background:var(--dk);color:var(--tx);font-family:"Inter",sans-serif;overflow-x:hidden;cursor:none}
+.cursor{position:fixed;width:10px;height:10px;background:var(--g);border-radius:50%;pointer-events:none;z-index:9999;mix-blend-mode:difference;transition:transform .08s}
+.cursor-ring{position:fixed;width:32px;height:32px;border:1.5px solid rgba(0,232,122,.35);border-radius:50%;pointer-events:none;z-index:9998;transition:width .3s,height .3s}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--dk)}::-webkit-scrollbar-thumb{background:var(--g2);border-radius:4px}
+.progress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--g),var(--bl));z-index:9997;width:0;transition:width .1s}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 48px;height:70px;display:flex;align-items:center;justify-content:space-between;transition:all .35s}
+nav.solid{background:rgba(5,10,7,.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,232,122,.07);box-shadow:0 4px 30px rgba(0,0,0,.4)}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.nav-logo-badge{width:38px;height:38px;background:var(--g);border-radius:9px;display:flex;align-items:center;justify-content:center;font-family:"Bebas Neue",sans-serif;font-size:13px;color:#000;letter-spacing:.5px}
+.nav-logo-name{font-size:14px;font-weight:800;color:#fff;letter-spacing:.5px}
+.nav-logo-sub{font-size:9px;color:var(--mt);letter-spacing:.5px;margin-top:1px}
+.nav-links{display:flex;gap:2px}
+.nav-link{font-size:12px;font-weight:500;color:var(--mt);padding:7px 14px;border-radius:8px;text-decoration:none;transition:all .2s;letter-spacing:.3px}
+.nav-link:hover,.nav-link.on{color:var(--g);background:rgba(0,232,122,.07)}
+.nav-cta{display:flex;gap:8px}
+.nav-phone{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:700;padding:8px 18px;border-radius:24px;text-decoration:none;transition:all .25s}
+.nav-phone.order{background:var(--g);color:#000}
+.nav-phone.order:hover{background:#fff;transform:scale(1.04)}
+.nav-phone.inq{border:1px solid var(--bd);color:var(--mt)}
+.nav-phone.inq:hover{border-color:var(--g);color:var(--g)}
+/* HERO */
+.hero{position:relative;height:100vh;display:flex;align-items:center;overflow:hidden;min-height:600px}
+.hero-mesh{position:absolute;inset:0;overflow:hidden}
+.mb{position:absolute;border-radius:50%;filter:blur(80px);animation:float 8s ease-in-out infinite}
+.mb1{width:600px;height:600px;background:radial-gradient(circle,rgba(0,232,122,.16),transparent 70%);top:-100px;left:-100px}
+.mb2{width:500px;height:500px;background:radial-gradient(circle,rgba(124,58,237,.1),transparent 70%);bottom:-80px;right:8%;animation-delay:-3s}
+.mb3{width:400px;height:400px;background:radial-gradient(circle,rgba(14,165,233,.09),transparent 70%);top:30%;right:-60px;animation-delay:-5s}
+@keyframes float{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(28px,-18px) scale(1.04)}66%{transform:translate(-18px,28px) scale(.97)}}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,232,122,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,232,122,.025) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,#000 30%,transparent 100%)}
+.hero-content{position:relative;z-index:2;padding:0 10vw;max-width:1280px;margin:0 auto;width:100%;padding-top:70px}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(0,232,122,.07);border:1px solid rgba(0,232,122,.18);padding:6px 16px;border-radius:24px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--g);margin-bottom:24px;animation:fadeUp .6s both}
+.hero-tag::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--g);animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.6)}}
+.hero-h1{font-family:"Bebas Neue",sans-serif;font-size:clamp(70px,11vw,150px);line-height:.88;letter-spacing:-1px;margin-bottom:18px;animation:fadeUp .7s .1s both}
+.line1{display:block;color:#fff}
+.line2{display:block;-webkit-text-stroke:1.5px var(--g);color:transparent}
+.line3{display:block;color:var(--g)}
+.hero-sub{font-size:15px;color:rgba(200,235,215,.6);max-width:420px;line-height:1.8;margin-bottom:34px;animation:fadeUp .8s .2s both}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:52px;animation:fadeUp .8s .3s both}
+.btn-g{display:inline-flex;align-items:center;gap:8px;background:var(--g);color:#000;font-size:13px;font-weight:800;padding:14px 28px;border-radius:12px;text-decoration:none;transition:all .3s;letter-spacing:.5px}
+.btn-g:hover{background:#fff;transform:translateY(-3px);box-shadow:0 16px 40px rgba(0,232,122,.22)}
+.btn-out{display:inline-flex;align-items:center;gap:8px;background:transparent;color:#fff;font-size:13px;font-weight:600;padding:13px 26px;border-radius:12px;text-decoration:none;border:1px solid rgba(255,255,255,.2);transition:all .3s}
+.btn-out:hover{border-color:var(--g);color:var(--g);transform:translateY(-2px)}
+.hero-stats{display:flex;gap:0;animation:fadeUp .9s .4s both}
+.hstat{padding:0 28px;border-right:1px solid rgba(255,255,255,.08)}
+.hstat:first-child{padding-left:0}.hstat:last-child{border:none}
+.hstat-n{font-family:"Bebas Neue",sans-serif;font-size:48px;line-height:1;color:var(--am)}
+.hstat-n sup{font-size:22px;color:var(--g)}
+.hstat-l{font-size:10px;color:rgba(180,215,195,.45);margin-top:2px;letter-spacing:.5px;text-transform:uppercase}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+/* MARQUEE */
+.marquee{overflow:hidden;background:var(--g);padding:12px 0}
+.marquee-track{display:flex;animation:marquee 28s linear infinite;width:max-content}
+.marquee-track:hover{animation-play-state:paused}
+.mtag{display:flex;align-items:center;gap:10px;padding:0 30px;font-size:12px;font-weight:700;color:rgba(0,0,0,.7);letter-spacing:.5px;white-space:nowrap}
+.mtag::after{content:"◆";font-size:7px;color:rgba(0,0,0,.25);margin-left:30px}
+@keyframes marquee{to{transform:translateX(-50%)}}
+/* SECTIONS */
+.section{padding:96px 0;position:relative}
+.container{max-width:1280px;margin:0 auto;padding:0 48px}
+.s-label{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--g);display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.s-label::before{content:"";width:26px;height:2px;background:var(--g)}
+.s-h2{font-family:"Bebas Neue",sans-serif;font-size:clamp(40px,6vw,70px);line-height:.92;letter-spacing:1px;margin-bottom:14px}
+.s-h2 em{color:var(--g);font-style:normal}
+.s-p{font-size:15px;color:var(--mt);line-height:1.8;max-width:540px}
+/* PRODUCT CATEGORY GRID */
+.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--bd);border:1px solid var(--bd);border-radius:20px;overflow:hidden;margin-top:56px}
+.cat-card{background:var(--cd);padding:38px 34px;position:relative;overflow:hidden;transition:all .4s;cursor:pointer;text-decoration:none;display:block}
+.cat-card::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,232,122,.06),transparent);opacity:0;transition:opacity .4s}
+.cat-card::after{content:"";position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--g);transform:scaleX(0);transition:transform .4s;transform-origin:left}
+.cat-card:hover::before{opacity:1}
+.cat-card:hover::after{transform:scaleX(1)}
+.cat-card:hover{background:var(--sf)}
+.cat-num{font-family:"Bebas Neue",sans-serif;font-size:68px;line-height:1;color:rgba(255,255,255,.04);margin-bottom:10px;transition:color .4s}
+.cat-card:hover .cat-num{color:rgba(0,232,122,.07)}
+.cat-icon{width:42px;height:42px;border-radius:10px;background:rgba(0,232,122,.09);border:1px solid rgba(0,232,122,.14);display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:14px;transition:all .3s}
+.cat-card:hover .cat-icon{background:rgba(0,232,122,.18);transform:scale(1.1)}
+.cat-name{font-size:17px;font-weight:700;color:#fff;margin-bottom:7px;line-height:1.25}
+.cat-desc{font-size:12px;color:var(--mt);line-height:1.6;margin-bottom:14px}
+.cat-meta{display:flex;align-items:center;justify-content:space-between}
+.cat-price{font-size:11px;font-weight:700;color:var(--g);background:rgba(0,232,122,.07);padding:3px 10px;border-radius:12px}
+.cat-arrow{width:30px;height:30px;border-radius:50%;border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:var(--mt);transition:all .3s;flex-shrink:0}
+.cat-card:hover .cat-arrow{border-color:var(--g);background:var(--g);color:#000;transform:rotate(45deg)}
+/* ABOUT */
+.about-bg{background:var(--cd);border-top:1px solid var(--bd);border-bottom:1px solid var(--bd)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.about-visual{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.av-card{border-radius:16px;padding:26px 22px;position:relative;overflow:hidden;transition:transform .3s;cursor:default}
+.av-card:hover{transform:translateY(-4px)}
+.av-card:nth-child(1){background:linear-gradient(135deg,#002814,#004020);grid-column:span 2}
+.av-card:nth-child(2){background:linear-gradient(135deg,#0a0020,#1a0040)}
+.av-card:nth-child(3){background:linear-gradient(135deg,#001a30,#003050)}
+.av-card-num{font-family:"Bebas Neue",sans-serif;font-size:44px;color:var(--g);line-height:1;margin-bottom:4px}
+.av-card h3{font-size:14px;font-weight:700;color:#fff;margin-bottom:4px}
+.av-card p{font-size:12px;color:rgba(200,220,210,.5);line-height:1.6}
+.about-feats{display:flex;flex-direction:column;gap:12px;margin-top:26px}
+.afeat{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:rgba(0,232,122,.04);border:1px solid rgba(0,232,122,.07);border-radius:10px;transition:all .3s;cursor:default}
+.afeat:hover{background:rgba(0,232,122,.08);border-color:rgba(0,232,122,.18);transform:translateX(4px)}
+.afeat-dot{width:7px;height:7px;border-radius:50%;background:var(--g);flex-shrink:0;margin-top:5px}
+.afeat h4{font-size:13px;font-weight:700;color:#fff;margin-bottom:2px}
+.afeat p{font-size:12px;color:var(--mt);line-height:1.5}
+/* COUNTERS */
+.counters{background:var(--dk);padding:56px 0;border-top:1px solid var(--bd)}
+.cnt-row{display:flex;justify-content:space-around;align-items:center;flex-wrap:wrap;gap:20px}
+.cnt{text-align:center;padding:0 20px}
+.cnt-n{font-family:"Bebas Neue",sans-serif;font-size:60px;line-height:1;background:linear-gradient(135deg,var(--g),var(--bl));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.cnt-n sup{font-size:28px}
+.cnt-l{font-size:10px;color:var(--mt);letter-spacing:1px;text-transform:uppercase;margin-top:4px}
+.cnt-div{width:1px;height:56px;background:var(--bd)}
+/* GALLERY */
+.gal-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;grid-template-rows:250px 250px;gap:12px;margin-top:48px}
+.gal-item{border-radius:16px;overflow:hidden;position:relative;cursor:pointer}
+.gal-item:first-child{grid-row:span 2}
+.gal-bg{width:100%;height:100%;transition:transform .6s ease;display:flex;align-items:center;justify-content:center;font-size:50px;position:relative}
+.gal-item:hover .gal-bg{transform:scale(1.07)}
+.gal-ov{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.75) 0%,transparent 50%);opacity:0;transition:opacity .3s}
+.gal-item:hover .gal-ov{opacity:1}
+.gal-lbl{position:absolute;bottom:0;left:0;right:0;padding:18px 16px 14px;font-size:13px;font-weight:600;color:#fff;transform:translateY(8px);opacity:0;transition:all .3s}
+.gal-item:hover .gal-lbl{transform:translateY(0);opacity:1}
+/* SPOTLIGHT */
+.spot-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.spot-card{background:linear-gradient(135deg,#0a0020,#1a0040,#050030);border:1px solid rgba(124,58,237,.25);border-radius:22px;padding:44px 38px;position:relative;overflow:hidden}
+.spot-card::before{content:"";position:absolute;top:-60px;right:-60px;width:240px;height:240px;background:radial-gradient(circle,rgba(124,58,237,.18),transparent);pointer-events:none}
+.spot-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(124,58,237,.18);border:1px solid rgba(124,58,237,.35);color:#a78bfa;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:5px 12px;border-radius:20px;margin-bottom:18px}
+.spot-card h2{font-family:"Bebas Neue",sans-serif;font-size:48px;color:#fff;line-height:.95;margin-bottom:14px;letter-spacing:1px}
+.spot-card h2 em{color:#a78bfa;font-style:normal}
+.spot-card p{font-size:13px;color:rgba(200,200,235,.6);line-height:1.7;margin-bottom:22px}
+.spot-feats{display:flex;flex-direction:column;gap:10px;margin-bottom:26px}
+.sf{display:flex;align-items:flex-start;gap:10px}
+.sf-dot{width:6px;height:6px;border-radius:50%;background:#a78bfa;flex-shrink:0;margin-top:5px}
+.sf-t{font-size:12px;color:rgba(210,205,240,.7);line-height:1.5}
+.sf-t strong{color:#fff;display:block;font-size:13px;margin-bottom:1px}
+.spot-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.ss{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:12px;text-align:center}
+.ss-n{font-family:"Bebas Neue",sans-serif;font-size:26px;color:#a78bfa;line-height:1}
+.ss-l{font-size:9px;color:rgba(200,200,220,.4);margin-top:2px}
+/* WHY US */
+.why-bg{background:linear-gradient(180deg,var(--dk),var(--cd));border-top:1px solid var(--bd)}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:52px}
+.why-card{background:var(--sf);border:1px solid var(--bd);border-radius:16px;padding:26px 22px;transition:all .35s;position:relative;overflow:hidden;cursor:default}
+.why-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--g),var(--bl));transform:scaleX(0);transform-origin:left;transition:transform .35s}
+.why-card:hover{border-color:rgba(0,232,122,.22);transform:translateY(-5px);box-shadow:0 18px 40px rgba(0,0,0,.3)}
+.why-card:hover::before{transform:scaleX(1)}
+.wc-num{font-family:"Bebas Neue",sans-serif;font-size:44px;color:rgba(0,232,122,.06);line-height:1;margin-bottom:10px}
+.wc-icon{font-size:24px;margin-bottom:10px}
+.wc-title{font-size:14px;font-weight:700;color:#fff;margin-bottom:7px}
+.wc-desc{font-size:12px;color:var(--mt);line-height:1.65}
+/* CATALOG */
+.catalog-section{background:var(--cd);padding:80px 0}
+.cat-ui{background:var(--dk);border:1px solid var(--bd);border-radius:18px;overflow:hidden}
+.cat-layout{display:grid;grid-template-columns:256px 1fr;min-height:600px}
+.cat-sb{border-right:1px solid var(--bd);background:rgba(0,0,0,.2)}
+.csb-hd{padding:18px 16px 14px;border-bottom:1px solid var(--bd);background:var(--cd);position:sticky;top:70px;z-index:20}
+.csb-hd h3{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--mt);margin-bottom:10px}
+.csb-sq{position:relative}
+.csb-sq svg{position:absolute;left:9px;top:50%;transform:translateY(-50%);opacity:.4;pointer-events:none}
+.csb-sq input{width:100%;background:var(--sf);border:1px solid var(--bd);color:var(--tx);font-size:12px;padding:7px 11px 7px 30px;border-radius:8px;outline:none;transition:all .2s;font-family:"Inter",sans-serif}
+.csb-sq input:focus{border-color:var(--g);box-shadow:0 0 0 3px rgba(0,232,122,.07)}
+.csb-nav{overflow-y:auto;max-height:580px}
+.csb-nav::-webkit-scrollbar{width:2px}
+.csb-nav::-webkit-scrollbar-thumb{background:var(--bd)}
+.csb-grp{font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(100,160,120,.4);padding:13px 16px 4px}
+.csb-item{display:flex;align-items:center;gap:7px;padding:8px 16px;cursor:pointer;font-size:12px;color:var(--mt);transition:all .15s;border-left:2px solid transparent}
+.csb-item:hover{background:rgba(0,232,122,.04);color:var(--tx)}
+.csb-item.on{border-left-color:var(--g);background:rgba(0,232,122,.07);color:var(--g);font-weight:600}
+.csb-dot{width:5px;height:5px;border-radius:50%;background:currentColor;opacity:.5;flex-shrink:0}
+.csb-div{height:1px;background:var(--bd);margin:5px 16px}
+.cat-main{display:flex;flex-direction:column;background:var(--dk)}
+.cat-tb{padding:12px 20px;border-bottom:1px solid var(--bd);display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:var(--cd);position:sticky;top:70px;z-index:19}
+.vt{display:flex;gap:2px;background:var(--sf);border:1px solid var(--bd);border-radius:7px;padding:2px}
+.vb{width:28px;height:28px;border-radius:5px;display:flex;align-items:center;justify-content:center;border:none;background:none;color:var(--mt);cursor:pointer;transition:all .15s}
+.vb.on{background:var(--g);color:#000}
+.pills{display:flex;gap:5px;flex-wrap:wrap}
+.pill{background:transparent;border:1px solid var(--bd);color:var(--mt);font-size:11px;font-weight:600;padding:4px 11px;border-radius:14px;cursor:pointer;transition:all .15s;font-family:"Inter",sans-serif}
+.pill:hover,.pill.on{background:var(--g);border-color:var(--g);color:#000}
+.res-ct{font-size:11px;color:var(--mt);margin-left:auto}
+.cat-body{padding:20px}
+#no-res{display:none;text-align:center;padding:60px;color:var(--mt)}
+/* PRODUCT SECTIONS */
+.ps{margin-bottom:30px;display:block}
+.ps-banner{border-radius:12px;overflow:hidden;position:relative;height:90px;display:flex;align-items:center;margin-bottom:12px}
+.ps-banner-bg{position:absolute;inset:0}
+.ps-banner-cnt{position:relative;z-index:2;padding:0 18px;display:flex;align-items:center;gap:13px;width:100%}
+.ps-banner-ic{width:36px;height:36px;border-radius:8px;background:rgba(0,232,122,.14);border:1px solid rgba(0,232,122,.28);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+.ps-banner h3{font-family:"Bebas Neue",sans-serif;font-size:19px;letter-spacing:1px;color:#fff;line-height:1;margin-bottom:2px}
+.ps-banner p{font-size:11px;color:rgba(200,235,215,.5)}
+.ps-hd{display:flex;align-items:flex-start;gap:12px;margin-bottom:11px;padding-bottom:10px;border-bottom:1px solid var(--bd)}
+.ps-ic{width:50px;height:50px;border-radius:10px;background:var(--sf);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:20px;border:1px solid var(--bd)}
+.ps-info h2{font-family:"Bebas Neue",sans-serif;font-size:21px;letter-spacing:.8px;color:#fff;line-height:1;margin-bottom:3px}
+.ps-info p{font-size:12px;color:var(--mt);max-width:480px;line-height:1.4}
+.ps-tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:5px}
+.ptag{font-size:10px;font-weight:600;padding:2px 8px;border-radius:7px;background:rgba(245,158,11,.07);border:1px solid rgba(245,158,11,.18);color:var(--am)}
+.ptag.g{background:rgba(0,232,122,.06);border-color:rgba(0,232,122,.16);color:var(--g)}
+.sub-t{font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--mt);padding:8px 12px 3px;background:rgba(255,255,255,.02);border-bottom:1px solid var(--bd);border-top:1px solid var(--bd);display:block;width:100%;margin-top:8px}
+.ptbl{width:100%;border-collapse:collapse;font-size:12px;border-radius:9px;overflow:hidden;border:1px solid var(--bd);margin-bottom:7px}
+.ptbl th{background:rgba(255,255,255,.025);color:var(--mt);font-weight:600;font-size:9px;letter-spacing:.8px;text-transform:uppercase;padding:8px 11px;text-align:left;border-bottom:1px solid var(--bd);white-space:nowrap}
+.ptbl td{padding:8px 11px;border-bottom:1px solid rgba(26,58,36,.5);vertical-align:middle}
+.ptbl tr:last-child td{border-bottom:none}
+.ptbl tr:hover td{background:rgba(0,232,122,.03)}
+.sku{font-family:"Courier New",monospace;font-size:11px;color:var(--g);font-weight:600}
+.pr{font-weight:700;color:var(--am)}
+.por{color:var(--mt);font-style:italic;font-size:11px}
+.hpv{font-weight:700;color:#fff}
+.enq{display:inline-flex;align-items:center;gap:4px;background:rgba(0,232,122,.07);border:1px solid rgba(0,232,122,.18);color:var(--g);font-size:10px;font-weight:600;padding:4px 10px;border-radius:6px;cursor:pointer;transition:all .15s;font-family:"Inter",sans-serif;white-space:nowrap}
+.enq:hover{background:var(--g);color:#000}
+.info-box{border-radius:9px;padding:11px 14px;margin-top:7px;margin-bottom:4px;font-size:12px}
+.info-g{background:rgba(0,232,122,.05);border:1px solid rgba(0,232,122,.13);color:rgba(150,230,180,.8)}
+.info-b{background:rgba(14,165,233,.05);border:1px solid rgba(14,165,233,.13);color:rgba(150,210,240,.8)}
+.info-y{background:rgba(245,158,11,.05);border:1px solid rgba(245,158,11,.13);color:rgba(240,200,120,.8)}
+/* FOOTER */
+footer{background:#020804;border-top:1px solid var(--bd);padding:60px 0 26px}
+.ft-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:44px;margin-bottom:40px}
+.ft-logo{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.ft-logo-badge{width:38px;height:38px;background:var(--g);border-radius:9px;display:flex;align-items:center;justify-content:center;font-family:"Bebas Neue",sans-serif;font-size:13px;color:#000}
+.ft-logo-name{font-size:16px;font-weight:800;color:#fff;letter-spacing:.5px}
+.ft-p{font-size:12px;color:rgba(150,200,165,.5);line-height:1.8;max-width:270px}
+.ft-badges{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
+.fb{font-size:10px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);color:rgba(180,220,190,.5);padding:3px 9px;border-radius:8px}
+.ft-col h4{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(100,150,115,.4);margin-bottom:14px}
+.ft-cc{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:10px 12px;text-decoration:none;transition:border-color .2s;margin-bottom:8px}
+.ft-cc:hover{border-color:rgba(0,232,122,.28)}
+.ft-cc-ic{width:30px;height:30px;border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ft-cc-lbl{font-size:9px;color:rgba(120,170,135,.45);text-transform:uppercase;letter-spacing:.4px}
+.ft-cc-n{font-size:14px;font-weight:700;color:#fff;margin-top:1px}
+.ft-cc-n.g{color:var(--g)}.ft-cc-n.a{color:var(--am)}
+.ft-links{list-style:none;display:flex;flex-direction:column;gap:8px}
+.ft-links a{font-size:13px;color:rgba(140,190,155,.45);text-decoration:none;display:flex;align-items:center;gap:5px;transition:color .2s}
+.ft-links a:hover{color:var(--g)}
+.ft-links a::before{content:"›";color:var(--g);opacity:.55;font-size:15px}
+.ft-bot{border-top:1px solid rgba(255,255,255,.05);padding-top:16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.ft-bot p{font-size:11px;color:rgba(100,150,115,.35)}
+/* TOAST */
+.toast{position:fixed;bottom:26px;right:26px;background:var(--sf);border:1px solid var(--g);color:var(--tx);padding:13px 18px;border-radius:13px;font-size:13px;font-weight:500;z-index:2000;transform:translateY(80px);opacity:0;transition:all .4s cubic-bezier(.34,1.56,.64,1);display:flex;align-items:center;gap:10px;box-shadow:0 8px 32px rgba(0,0,0,.4);max-width:330px}
+.toast.on{transform:translateY(0);opacity:1}
+/* BACK TOP */
+.back-top{position:fixed;bottom:26px;left:26px;width:38px;height:38px;border-radius:50%;background:var(--g);color:#000;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;transform:translateY(14px);transition:all .3s;z-index:400;border:none;font-weight:900;font-size:16px}
+.back-top.on{opacity:1;transform:translateY(0)}
+.back-top:hover{transform:translateY(-2px) scale(1.1)}
+
+/* WHATSAPP BUTTON */
+.wa-btn{position:fixed;bottom:26px;right:82px;width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#25d366,#128c7e);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.45);z-index:500;transition:all .3s;text-decoration:none}
+.wa-btn:hover{transform:translateY(-3px) scale(1.08);box-shadow:0 8px 28px rgba(37,211,102,.6)}
+.wa-tooltip{position:absolute;right:64px;background:#1a1a1a;color:#fff;font-size:11px;padding:5px 10px;border-radius:6px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s;border:1px solid rgba(37,211,102,.3)}
+.wa-btn:hover .wa-tooltip{opacity:1}
+
+/* WIZARD MODAL */
+.wizard-modal{position:fixed;inset:0;background:rgba(0,0,0,.85);backdrop-filter:blur(6px);z-index:1100;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s}
+.wizard-modal.open{opacity:1;pointer-events:all}
+.wizard-box{background:#0d1117;border:1px solid rgba(0,232,122,.25);border-radius:20px;width:min(660px,95vw);max-height:90vh;overflow-y:auto;padding:0}
+.wiz-hd{display:flex;justify-content:space-between;align-items:flex-start;padding:28px 28px 16px;border-bottom:1px solid rgba(255,255,255,.07)}
+.wiz-hd h2{font-size:20px;color:var(--g);margin:0 0 4px}
+.wiz-hd p{font-size:12px;color:#888;margin:0}
+.wiz-close{background:none;border:1px solid rgba(255,255,255,.2);color:#aaa;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.wiz-close:hover{border-color:var(--g);color:var(--g)}
+.wiz-body{padding:24px 28px 28px}
+.wiz-progress{display:flex;gap:10px;margin-bottom:24px}
+.wiz-dot{flex:1;height:4px;background:rgba(255,255,255,.12);border-radius:2px;transition:background .4s}
+.wiz-dot.done{background:var(--g)}
+.wiz-step{display:none}
+.wiz-step.active{display:block}
+.wiz-q{font-size:18px;font-weight:700;color:#fff;margin-bottom:6px}
+.wiz-sub{font-size:12px;color:#888;margin-bottom:20px}
+.wiz-opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px}
+.wiz-opt{background:rgba(255,255,255,.04);border:1.5px solid rgba(255,255,255,.1);border-radius:14px;padding:18px 14px;cursor:pointer;text-align:center;transition:all .25s}
+.wiz-opt:hover{border-color:var(--g);background:rgba(0,232,122,.08);transform:translateY(-2px)}
+.wiz-opt-icon{font-size:28px;margin-bottom:8px}
+.wiz-opt-title{font-size:14px;font-weight:700;color:#fff;margin-bottom:4px}
+.wiz-opt-sub{font-size:11px;color:#888}
+.wiz-result{background:rgba(0,232,122,.05);border:1px solid rgba(0,232,122,.2);border-radius:14px;padding:20px;margin-bottom:20px}
+.wiz-result h3{color:var(--g);font-size:16px;margin:0 0 16px}
+.wiz-rec-item{display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.06)}
+.wiz-rec-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.wiz-rec-ic{font-size:24px;flex-shrink:0}
+.wiz-rec-title{font-size:14px;font-weight:700;color:#fff;margin-bottom:3px}
+.wiz-rec-desc{font-size:12px;color:#aaa;margin-bottom:4px}
+.wiz-rec-price{font-size:12px;color:var(--am);font-weight:600}
+.wiz-actions{display:flex;gap:12px;flex-wrap:wrap}
+.wiz-btn{padding:12px 22px;border-radius:30px;font-size:13px;font-weight:700;cursor:pointer;border:none;transition:all .25s;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.wiz-btn.wa{background:linear-gradient(135deg,#25d366,#128c7e);color:#fff}
+.wiz-btn.wa:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(37,211,102,.4)}
+.wiz-btn.sec{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.15)}
+.wiz-btn.sec:hover{background:rgba(255,255,255,.12)}
+
+/* CHATBOT */
+.chat-toggle{position:fixed;bottom:26px;right:26px;width:52px;height:52px;border-radius:50%;background:var(--g);border:none;cursor:pointer;z-index:600;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,232,122,.4);transition:all .3s}
+.chat-toggle:hover{transform:scale(1.08)}
+.chat-toggle .close-icon{display:none}
+.chat-toggle.open .chat-icon{display:none}
+.chat-toggle.open .close-icon{display:block}
+.chat-window{position:fixed;bottom:90px;right:26px;width:340px;max-height:560px;background:#0d1117;border:1px solid rgba(0,232,122,.25);border-radius:18px;z-index:599;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.6);opacity:0;transform:translateY(16px) scale(.96);pointer-events:none;transition:all .3s}
+.chat-window.open{opacity:1;transform:translateY(0) scale(1);pointer-events:all}
+.chat-hd{background:rgba(0,232,122,.07);border-bottom:1px solid rgba(0,232,122,.15);padding:14px 16px;display:flex;align-items:center;gap:10px;flex-shrink:0}
+.chat-avatar{width:36px;height:36px;background:var(--g);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.chat-hd-info h4{font-size:13px;color:#fff;margin:0 0 2px;font-weight:700}
+.chat-hd-info p{font-size:10px;color:#888;margin:0}
+.lang-switch{margin-left:auto;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#aaa;font-size:10px;padding:4px 9px;border-radius:20px;cursor:pointer}
+.lang-switch:hover{border-color:var(--g);color:var(--g)}
+.chat-online{width:8px;height:8px;background:#22c55e;border-radius:50%;flex-shrink:0;box-shadow:0 0 6px #22c55e}
+.chat-msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;scroll-behavior:smooth}
+.chat-msgs::-webkit-scrollbar{width:4px}
+.chat-msgs::-webkit-scrollbar-track{background:transparent}
+.chat-msgs::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1);border-radius:2px}
+.msg{max-width:88%;padding:10px 14px;border-radius:14px;font-size:13px;line-height:1.5;animation:msgIn .2s ease}
+@keyframes msgIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.msg.bot{background:rgba(255,255,255,.06);color:#ddd;border-bottom-left-radius:4px;align-self:flex-start}
+.msg.user{background:var(--g);color:#000;font-weight:600;border-bottom-right-radius:4px;align-self:flex-end}
+.typing-dots{display:flex;gap:4px;align-items:center;padding:2px 0}
+.typing-dots span{width:6px;height:6px;background:#888;border-radius:50%;animation:blink 1.2s infinite}
+.typing-dots span:nth-child(2){animation-delay:.2s}
+.typing-dots span:nth-child(3){animation-delay:.4s}
+@keyframes blink{0%,80%,100%{opacity:.3}40%{opacity:1}}
+.chat-quick{padding:8px 12px;display:flex;gap:6px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.06);flex-shrink:0}
+.qchip{background:rgba(0,232,122,.08);border:1px solid rgba(0,232,122,.25);color:var(--g);font-size:10px;padding:5px 10px;border-radius:20px;cursor:pointer;transition:all .2s;white-space:nowrap}
+.qchip:hover{background:rgba(0,232,122,.18)}
+.chat-input-area{display:flex;gap:8px;padding:12px;border-top:1px solid rgba(255,255,255,.07);flex-shrink:0}
+.chat-input{flex:1;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#fff;padding:9px 12px;border-radius:10px;font-size:12px;outline:none;font-family:inherit}
+.chat-input:focus{border-color:var(--g)}
+.chat-send{background:var(--g);border:none;color:#000;width:34px;height:34px;border-radius:10px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;transition:all .2s}
+.chat-send:hover{transform:scale(1.08)}
+
+/* BRANDS SECTION */
+.brands-sec{padding:80px 0;background:rgba(255,255,255,.015)}
+.brands-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.brand-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:32px 24px;text-align:center;transition:all .3s}
+.brand-card:hover{border-color:rgba(0,232,122,.3);background:rgba(0,232,122,.04);transform:translateY(-4px)}
+.brand-logo{font-size:20px;font-weight:900;letter-spacing:1px;margin-bottom:10px}
+.brand-sub{font-size:12px;color:#888;line-height:1.6;margin-bottom:14px}
+.brand-badge{font-size:11px;color:var(--g);background:rgba(0,232,122,.1);border:1px solid rgba(0,232,122,.2);padding:4px 12px;border-radius:20px;display:inline-block}
+
+/* ENQUIRY + MAPS */
+.enq-sec{padding:90px 0;background:rgba(0,0,0,.2)}
+.enq-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.enq-form{background:rgba(255,255,255,.03);border:1px solid rgba(0,232,122,.2);border-radius:18px;padding:28px}
+.enq-form h3{color:var(--g);font-size:16px;margin:0 0 4px}
+.enq-form>p{font-size:11px;color:#888;margin:0 0 20px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-group{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.form-group label{font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:.5px}
+.form-group input,.form-group select,.form-group textarea{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#fff;padding:10px 12px;border-radius:10px;font-size:13px;outline:none;font-family:inherit;transition:border .2s}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--g)}
+.form-group select option{background:#0d1117}
+.form-group textarea{resize:vertical;min-height:80px}
+.form-submit{width:100%;background:linear-gradient(135deg,#25d366,#128c7e);color:#fff;border:none;padding:14px;border-radius:12px;font-size:14px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:all .3s;margin-top:4px}
+.form-submit:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(37,211,102,.4)}
+.enq-info{display:flex;flex-direction:column;gap:16px}
+.einfo-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:18px;display:flex;align-items:center;gap:16px}
+.einfo-ic{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.einfo-title{font-size:11px;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:2px}
+.einfo-val{font-size:16px;font-weight:800;margin-bottom:2px}
+.einfo-sub{font-size:11px;color:#666}
+.map-embed{border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.08)}
+.map-embed iframe{width:100%;height:220px;border:none;display:block}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .brands-grid{grid-template-columns:1fr}
+  .enq-grid{grid-template-columns:1fr;gap:36px}
+  .form-row{grid-template-columns:1fr}
+  .chat-window{width:calc(100vw - 20px);right:10px}
+  .wa-btn{right:72px}
+  .wizard-box{padding:0}
+  .wiz-body,.wiz-hd{padding:18px}
+}
+
+/* GOVERNMENT CLIENTS MARQUEE */
+.govt-section{padding:64px 0;background:rgba(0,0,0,.25);overflow:hidden}
+.govt-head{text-align:center;margin-bottom:40px}
+.govt-head .s-label{justify-content:center;margin-bottom:10px}
+.govt-head h2{font-size:28px;font-weight:900;color:#fff;margin:0 0 8px}
+.govt-head p{font-size:13px;color:#888;margin:0}
+.marquee-outer{overflow:hidden;position:relative;width:100%}
+.marquee-outer::before,.marquee-outer::after{content:'';position:absolute;top:0;bottom:0;width:120px;z-index:2;pointer-events:none}
+.marquee-outer::before{left:0;background:linear-gradient(90deg,#080c10 0%,transparent 100%)}
+.marquee-outer::after{right:0;background:linear-gradient(-90deg,#080c10 0%,transparent 100%)}
+.marquee-track{display:flex;gap:20px;width:max-content;animation:marqueeScroll 28s linear infinite}
+.marquee-track:hover{animation-play-state:paused}
+@keyframes marqueeScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.logo-card{flex-shrink:0;width:180px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:22px 16px;display:flex;flex-direction:column;align-items:center;gap:10px;transition:all .3s;cursor:default}
+.logo-card:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.2);background:rgba(255,255,255,.07)}
+.logo-icon{width:64px;height:64px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:900;letter-spacing:1px;flex-shrink:0}
+.logo-name{font-size:13px;font-weight:800;color:#fff;letter-spacing:.5px;text-align:center}
+.logo-full{font-size:9px;color:#888;text-align:center;line-height:1.4;max-width:140px}
+.logo-badge{font-size:9px;font-weight:700;padding:3px 8px;border-radius:20px;margin-top:2px}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(36px);transition:opacity .7s ease,transform .7s ease}
+.reveal.vis{opacity:1;transform:translateY(0)}
+.reveal-l{opacity:0;transform:translateX(-36px);transition:opacity .7s ease,transform .7s ease}
+.reveal-l.vis{opacity:1;transform:translateX(0)}
+.reveal-r{opacity:0;transform:translateX(36px);transition:opacity .7s ease,transform .7s ease}
+.reveal-r.vis{opacity:1;transform:translateX(0)}
+.reveal-s{opacity:0;transform:scale(.9);transition:opacity .6s ease,transform .6s ease}
+.reveal-s.vis{opacity:1;transform:scale(1)}
+.stagger>*{opacity:0;transform:translateY(22px);transition:opacity .5s ease,transform .5s ease}
+.stagger.vis>*:nth-child(1){opacity:1;transform:none;transition-delay:.05s}
+.stagger.vis>*:nth-child(2){opacity:1;transform:none;transition-delay:.13s}
+.stagger.vis>*:nth-child(3){opacity:1;transform:none;transition-delay:.21s}
+.stagger.vis>*:nth-child(4){opacity:1;transform:none;transition-delay:.29s}
+.stagger.vis>*:nth-child(5){opacity:1;transform:none;transition-delay:.37s}
+.stagger.vis>*:nth-child(6){opacity:1;transform:none;transition-delay:.45s}
+.stagger.vis>*:nth-child(7){opacity:1;transform:none;transition-delay:.53s}
+.stagger.vis>*:nth-child(8){opacity:1;transform:none;transition-delay:.61s}
+.stagger.vis>*:nth-child(9){opacity:1;transform:none;transition-delay:.69s}
+/* SKN */
+.skn-hd{background:linear-gradient(135deg,#120800,#2a1500,#120800);border-radius:12px;padding:17px 22px;margin-bottom:18px;display:flex;align-items:center;gap:14px;border:1px solid rgba(245,158,11,.18)}
+/* RESPONSIVE */
+@media(max-width:1024px){.cat-grid{grid-template-columns:repeat(2,1fr)}.about-grid,.spot-grid{grid-template-columns:1fr;gap:36px}.ft-grid{grid-template-columns:1fr 1fr}.gal-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}.gal-item:first-child{grid-row:auto}}
+@media(max-width:768px){nav{padding:0 18px}.hero-content{padding:0 5vw;padding-top:70px}.container{padding:0 18px}.cat-layout{grid-template-columns:1fr}.cat-sb{border-right:none;border-bottom:1px solid var(--bd)}.csb-nav{max-height:none;display:flex;flex-wrap:wrap;gap:3px;padding:8px 12px}.csb-grp,.csb-div{display:none}.csb-item{border:1px solid var(--bd);border-left:none;border-radius:14px;padding:4px 10px}.csb-item.on{border-color:var(--g)}.cat-grid{grid-template-columns:1fr}.why-grid{grid-template-columns:1fr 1fr}.ft-grid{grid-template-columns:1fr}.hero-stats{display:none}.gal-grid{grid-template-columns:1fr}.section{padding:68px 0}}
+@media(max-width:480px){.why-grid{grid-template-columns:1fr}.nav-links{display:none}.nav-cta .nav-phone.inq{display:none}}
+</style>
+</head>
+<body>
+<!-- CURSOR -->
+<div class="cursor" id="cur"></div>
+<div class="cursor-ring" id="ring"></div>
+<div class="progress" id="prog"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a class="nav-logo" href="#home">
+    <div class="nav-logo-badge">IPS</div>
+    <div><div class="nav-logo-name">INFRA POWER SYSTEM</div><div class="nav-logo-sub">Authorised Distributor · Lauritz Knudsen E&A</div></div>
+  </a>
+  <div class="nav-links">
+    <a class="nav-link on" href="#home">Home</a>
+    <a class="nav-link" href="#products">Products</a>
+    <a class="nav-link" href="#about">About</a>
+    <a class="nav-link" href="#catalog">Price List</a>
+    <a class="nav-link" href="#enquiry">Enquiry</a>
+    <a class="nav-link" href="#contact">Contact</a>
+  </div>
+  <div class="nav-cta">
+    <a class="nav-phone order" href="tel:8126868752">📞 81268 68752</a>
+    <a class="nav-phone inq" href="tel:02269327800">022-6932 7800</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-mesh"><div class="mb mb1"></div><div class="mb mb2"></div><div class="mb mb3"></div></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Authorised Distributor — Lauritz Knudsen E&A</div>
+    <h1 class="hero-h1"><span class="line1">INFRA</span><span class="line2">POWER</span><span class="line3">SYSTEM</span></h1>
+    <p class="hero-sub">Complete agricultural electrical solutions — pump starters, submersible controllers, smart IoT systems. Genuine LK products for every farmer.</p>
+    <div class="hero-btns">
+      <a class="btn-g" href="#catalog">📋 View Price List</a>
+      <button class="btn-out" onclick="openWiz()" style="cursor:pointer">🔍 Help Me Choose</button>
+      <a class="btn-out" href="tel:8126868752">📞 Call to Order</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hstat"><div class="hstat-n" data-target="500">0<sup>+</sup></div><div class="hstat-l">SKUs Listed</div></div>
+      <div class="hstat"><div class="hstat-n" data-target="27">0</div><div class="hstat-l">LK Categories</div></div>
+      <div class="hstat"><div class="hstat-n" data-target="75">0<sup>HP</sup></div><div class="hstat-l">Max Range</div></div>
+    </div>
+  </div>
+  <div style="position:absolute;bottom:28px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;animation:fadeUp 1s .6s both" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
+    <div style="width:2px;height:36px;background:linear-gradient(180deg,var(--g),transparent);animation:scrollAnim 2s infinite"></div>
+    <span style="font-size:9px;letter-spacing:3px;color:var(--mt);text-transform:uppercase">Scroll</span>
+  </div>
+</section>
+<style>@keyframes scrollAnim{0%{transform:scaleY(0);transform-origin:top;opacity:1}100%{transform:scaleY(1);transform-origin:top;opacity:0}}</style>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    <div class="mtag">MK1 DOL Starters ₹3,292</div><div class="mtag">SKN Bentex Oil Starters ₹2,580</div><div class="mtag">MU-GS Smart 6–75 HP</div><div class="mtag">M-POWER++ 4G LTE</div><div class="mtag">Solar Px3000 Drive</div><div class="mtag">K-Curve MCB ₹995</div><div class="mtag">MR-Gi Digital Controller</div><div class="mtag">PF Capacitors 1–30 kVAr</div><div class="mtag">MU-G Submersible 3–75 HP</div><div class="mtag">Price List W.e.f. 01.02.2026</div>
+    <div class="mtag">MK1 DOL Starters ₹3,292</div><div class="mtag">SKN Bentex Oil Starters ₹2,580</div><div class="mtag">MU-GS Smart 6–75 HP</div><div class="mtag">M-POWER++ 4G LTE</div><div class="mtag">Solar Px3000 Drive</div><div class="mtag">K-Curve MCB ₹995</div><div class="mtag">MR-Gi Digital Controller</div><div class="mtag">PF Capacitors 1–30 kVAr</div><div class="mtag">MU-G Submersible 3–75 HP</div><div class="mtag">Price List W.e.f. 01.02.2026</div>
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<section class="section" id="products">
+<div class="container">
+  <div class="reveal"><div class="s-label">Our Range</div><h2 class="s-h2">PRODUCT <em>CATEGORIES</em></h2><p class="s-p">From simple DOL starters to IoT smart controllers &amp; oil-immersed starters — the complete range under one roof.</p></div>
+  <div class="cat-grid stagger">
+    <a class="cat-card" href="#catalog" onclick="filterSec('mk1');return false"><div class="cat-num">01</div><div class="cat-icon">⚡</div><div class="cat-name">MK1/MK2/MK.i Starters</div><p class="cat-desc">DOL, SASD &amp; FASD for 3-phase 415V pumps. 0.25–15 HP. Wide Band Coil available.</p><div class="cat-meta"><span class="cat-price">from ₹3,292</span><div class="cat-arrow">→</div></div></a>
+    <a class="cat-card" href="#catalog" onclick="filterSec('mug6');return false"><div class="cat-num">02</div><div class="cat-icon">💧</div><div class="cat-name">MU-G Submersible Controllers</div><p class="cat-desc">3-phase submersible pump controllers 3–75 HP. DOL &amp; FASD with SPPR. Wideband coil.</p><div class="cat-meta"><span class="cat-price">from ₹10,450</span><div class="cat-arrow">→</div></div></a>
+    <a class="cat-card" href="#catalog" onclick="filterSec('mugs');return false"><div class="cat-num">03</div><div class="cat-icon">🤖</div><div class="cat-name">MU-GS Smart Controllers</div><p class="cat-desc">IoT-enabled. SMS/App/IVRS. Theft alert. 11 languages. Built-in MCB. 6–75 HP.</p><div class="cat-meta"><span class="cat-price">from ₹24,550</span><div class="cat-arrow">→</div></div></a>
+    <a class="cat-card" href="#catalog" onclick="filterSec('mrgi');return false"><div class="cat-num">04</div><div class="cat-icon">🔌</div><div class="cat-name">Single Phase Controllers</div><p class="cat-desc">MR-Gi Digital, MR-G2/G3, MF-G1 for 0.5–5 HP single-phase submersible pumps.</p><div class="cat-meta"><span class="cat-price">from ₹4,560</span><div class="cat-arrow">→</div></div></a>
+    <a class="cat-card" href="#catalog" onclick="filterSec('mpower');return false"><div class="cat-num">05</div><div class="cat-icon">📡</div><div class="cat-name">M-POWER Remote Modules</div><p class="cat-desc">M-POWER Pro (GSM), M-POWER++ (4G LTE). Remote ON/OFF via SMS or App.</p><div class="cat-meta"><span class="cat-price">from ₹5,760</span><div class="cat-arrow">→</div></div></a>
+    <a class="cat-card" href="#catalog" onclick="filterSec('skn-oil-3ph');return false"><div class="cat-num">06</div><div class="cat-icon">🛢️</div><div class="cat-name">SKN Bentex Oil Starters</div><p class="cat-desc">BOI L/HD (DOL) &amp; BSA L/HD (Star-Delta) oil immersed starters. Est. 1960. 3–50 HP.</p><div class="cat-meta"><span class="cat-price">from ₹2,580</span><div class="cat-arrow">→</div></div></a>
+    <a class="cat-card" href="#catalog" onclick="filterSec('mcb');return false"><div class="cat-num">07</div><div class="cat-icon">🛡️</div><div class="cat-name">MCB / MCCB / Protection</div><p class="cat-desc">K-Curve MCBs, DY125U MCCBs &amp; α-PROTECTOR relays. 10–125A. 10–15kA.</p><div class="cat-meta"><span class="cat-price">from ₹995</span><div class="cat-arrow">→</div></div></a>
+    <a class="cat-card" href="#catalog" onclick="filterSec('caps');return false"><div class="cat-num">08</div><div class="cat-icon">🔋</div><div class="cat-name">PF Capacitors</div><p class="cat-desc">Self-healing MPP film box capacitors. 440V, 1–30 kVAr. Reduces energy waste.</p><div class="cat-meta"><span class="cat-price">from ₹250</span><div class="cat-arrow">→</div></div></a>
+    <a class="cat-card" href="#catalog" onclick="filterSec('solar');return false"><div class="cat-num">09</div><div class="cat-icon">☀️</div><div class="cat-name">Solar Px3000 Drive</div><p class="cat-desc">True MPPT solar VFD for 3-phase submersible pumps. Solar + Grid dual energy.</p><div class="cat-meta"><span class="cat-price">Enquire for price</span><div class="cat-arrow">→</div></div></a>
+  </div>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section class="section about-bg" id="about">
+<div class="container">
+  <div class="about-grid">
+    <div class="reveal-l">
+      <div class="s-label">Who We Are</div>
+      <h2 class="s-h2">TRUSTED <em>PARTNER</em><br>FOR AGRICULTURE</h2>
+      <p class="s-p" style="margin-bottom:14px">Infra Power System is an authorised distributor of Lauritz Knudsen Electrical &amp; Automation — serving farmers and businesses across India with genuine, high-quality electrical products.</p>
+      <p class="s-p">From 0.125 HP single-phase starters to 75 HP IoT-enabled smart controllers, we stock the complete LK agricultural range along with SKN Bentex oil immersed starters.</p>
+      <div class="about-feats">
+        <div class="afeat"><div class="afeat-dot"></div><div><h4>100% Genuine Products</h4><p>Authorised LK E&A distributor. Every product is manufacturer-backed with full warranty.</p></div></div>
+        <div class="afeat"><div class="afeat-dot"></div><div><h4>Pan India Delivery</h4><p>Stocked inventory for popular SKUs. Same-day dispatch available across India.</p></div></div>
+        <div class="afeat"><div class="afeat-dot"></div><div><h4>Expert Technical Support</h4><p>Help on product selection for your exact pump HP, phase &amp; voltage requirements.</p></div></div>
+        <div class="afeat"><div class="afeat-dot"></div><div><h4>After-Sales Helpline</h4><p>Dedicated complaint line at 022-6932 7800. We stand by every product we sell.</p></div></div>
+        <div class="afeat"><div class="afeat-dot" style="background:var(--am)"></div><div><h4>Government Tender Supplier 🏛️</h4><p>Proudly served PSU & government tenders — <strong style="color:var(--am)">NTPC · ICAR · BHEL</strong> and more. Trusted for bulk institutional supply.</p></div></div>
+      </div>
+    </div>
+    <div class="about-visual reveal-r">
+      <div class="av-card"><div class="av-card-num">500+</div><h3>SKUs in Catalog</h3><p>Complete Lauritz Knudsen range + SKN Bentex oil starters</p></div>
+      <div class="av-card"><div class="av-card-num" style="font-size:32px">0.125–75<span style="font-size:18px"> HP</span></div><h3>Widest HP Range</h3><p>Smallest to largest agricultural starters</p></div>
+      <div class="av-card"><div style="font-size:28px;margin-bottom:6px">☀️</div><h3>Solar Ready</h3><p>Px3000 solar drive for modern sustainable irrigation</p></div>
+      <div class="av-card" style="border-color:rgba(245,158,11,.3);background:rgba(245,158,11,.05)"><div style="font-size:26px;margin-bottom:6px">🏛️</div><h3 style="color:var(--am)">Govt Tender Supplier</h3><p>NTPC · ICAR · BHEL &amp; more PSU tenders fulfilled</p></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- BRANDS SECTION -->
+<section class="brands-sec reveal">
+<div class="container">
+  <div style="text-align:center;margin-bottom:0">
+    <div class="s-label" style="justify-content:center">Our Brands</div>
+    <h2 class="s-h2" style="text-align:center">TRUSTED <em>BRANDS</em> WE CARRY</h2>
+    <p class="s-p" style="margin:0 auto;text-align:center">Authorised distributor of India's leading agricultural electrical brands</p>
+  </div>
+  <div class="brands-grid">
+    <div class="brand-card">
+      <div class="brand-logo" style="color:var(--g)">LAURITZ KNUDSEN</div>
+      <div class="brand-sub">Electrical &amp; Automation<br>est. 1891 · Danish Heritage</div>
+      <div class="brand-badge">✓ Authorised Distributor</div>
+    </div>
+    <div class="brand-card">
+      <div class="brand-logo" style="color:var(--am)">SKN BENTEX</div>
+      <div class="brand-sub">Oil Immersed Starters<br>est. 1960 · Made in India</div>
+      <div class="brand-badge">✓ Stocked Products</div>
+    </div>
+    <div class="brand-card">
+      <div class="brand-logo" style="color:var(--bl); font-size:24px">INFRA POWER SYSTEM</div>
+      <div class="brand-sub">Agra, Uttar Pradesh<br>Serving farmers Pan India</div>
+      <div class="brand-badge">📞 81268 68752</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- GOVERNMENT CLIENTS MARQUEE -->
+<section class="govt-section">
+  <div class="govt-head">
+    <div class="s-label" style="justify-content:center">Trusted By</div>
+    <h2>GOVERNMENT &amp; PSU <em>CLIENTS</em></h2>
+    <p>Proud supplier to India's leading public sector undertakings &amp; government institutions</p>
+  </div>
+  <div class="marquee-outer">
+    <div class="marquee-track" id="marqueeTrack">
+      <!-- SET 1 -->
+      <div class="logo-card">
+        <div class="logo-icon" style="background:linear-gradient(135deg,#1a3a6e,#0d2244);color:#fff;font-size:18px">NTPC</div>
+        <div class="logo-name">NTPC</div>
+        <div class="logo-full">National Thermal Power Corporation</div>
+        <div class="logo-badge" style="background:rgba(59,130,246,.15);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">Power PSU</div>
+      </div>
+      <div class="logo-card">
+        <div class="logo-icon" style="background:linear-gradient(135deg,#166534,#14532d);color:#86efac;font-size:18px">ICAR</div>
+        <div class="logo-name">ICAR</div>
+        <div class="logo-full">Indian Council of Agricultural Research</div>
+        <div class="logo-badge" style="background:rgba(34,197,94,.1);color:#4ade80;border:1px solid rgba(34,197,94,.2)">Agri Research</div>
+      </div>
+      <div class="logo-card">
+        <div class="logo-icon" style="background:linear-gradient(135deg,#7c2d12,#431407);color:#fdba74;font-size:18px">BHEL</div>
+        <div class="logo-name">BHEL</div>
+        <div class="logo-full">Bharat Heavy Electricals Limited</div>
+        <div class="logo-badge" style="background:rgba(249,115,22,.1);color:#fb923c;border:1px solid rgba(249,115,22,.2)">Heavy Industry</div>
+      </div>
+      <div class="logo-card">
+        <div class="logo-icon" style="background:linear-gradient(135deg,#1e3a5f,#0f2040);color:#7dd3fc;font-size:16px">IFFCO</div>
+        <div class="logo-name">IFFCO</div>
+        <div class="logo-full">Indian Farmers Fertiliser Cooperative</div>
+        <div class="logo-badge" style="background:rgba(14,165,233,.1);color:#38bdf8;border:1px solid rgba(14,165,233,.2)">Cooperative</div>
+      </div>
+      <div class="logo-card">
+        <div class="logo-icon" style="background:linear-gradient(135deg,#3b0764,#1e0536);color:#d8b4fe;font-size:16px">SAIL</div>
+        <div class="logo-name">SAIL</div>
+        <div class="logo-full">Steel Authority of India Limited</div>
+        <div class="logo-badge" style="background:rgba(168,85,247,.1);color:#c084fc;border:1px solid rgba(168,85,247,.2)">Steel PSU</div>
+      </div>
+      <div class="logo-card">
+        <div class="logo-icon" style="background:linear-gradient(135deg,#713f12,#3d2007);color:#fcd34d;font-size:14px">PWD</div>
+        <div class="logo-name">PWD / UP Jal Nigam</div>
+        <div class="logo-full">Public Works &amp; Water Dept, Uttar Pradesh</div>
+        <div class="logo-badge" style="background:rgba(234,179,8,.1);color:#facc15;border:1px solid rgba(234,179,8,.2)">State Govt</div>
+      </div>
+      <!-- SET 2 (duplicate for seamless loop) -->
+      <div class="logo-card">
+        <div class="logo-icon" style="background:linear-gradient(135deg,#1a3a6e,#0d2244);color:#fff;font-size:18px">NTPC</div>
+        <div class="logo-name">NTPC</div>
+        <div class="logo-full">National Thermal Power Corporation</div>
+        <div class="logo-badge" style="background:rgba(59,130,246,.15);color:#60a5fa;border:1px solid rgba(59,130,246,.2)">Power PSU</div>
+      </div>
+      <div class="logo-card">
+        <div class="logo-icon" style="background:linear-gradient(135deg,#166534,#14532d);color:#86efac;font-size:18px">ICAR</div>
+        <div class="logo-name">ICAR</div>
+        <div class="logo-full">Indian Council of Agricultural Research</div>
+        <div class="logo-badge" style="background:rgba(34,197,94,.1);color:#4ade80;border:1px solid rgba(34,197,94,.2)">Agri Research</div>
+      </div>
+      <div class="logo-card">
+        <div class="logo-icon" style="background:linear-gradient(135deg,#7c2d12,#431407);color:#fdba74;font-size:18px">BHEL</div>
+        <div class="logo-name">BHEL</div>
+        <div class="logo-full">Bharat Heavy Electricals Limited</div>
+        <div class="logo-badge" style="background:rgba(249,115,22,.1);color:#fb923c;border:1px solid rgba(249,115,22,.2)">Heavy Industry</div>
+      </div>
+      <div class="logo-card">
+        <div class="logo-icon" style="background:linear-gradient(135deg,#1e3a5f,#0f2040);color:#7dd3fc;font-size:16px">IFFCO</div>
+        <div class="logo-name">IFFCO</div>
+        <div class="logo-full">Indian Farmers Fertiliser Cooperative</div>
+        <div class="logo-badge" style="background:rgba(14,165,233,.1);color:#38bdf8;border:1px solid rgba(14,165,233,.2)">Cooperative</div>
+      </div>
+      <div class="logo-card">
+        <div class="logo-icon" style="background:linear-gradient(135deg,#3b0764,#1e0536);color:#d8b4fe;font-size:16px">SAIL</div>
+        <div class="logo-name">SAIL</div>
+        <div class="logo-full">Steel Authority of India Limited</div>
+        <div class="logo-badge" style="background:rgba(168,85,247,.1);color:#c084fc;border:1px solid rgba(168,85,247,.2)">Steel PSU</div>
+      </div>
+      <div class="logo-card">
+        <div class="logo-icon" style="background:linear-gradient(135deg,#713f12,#3d2007);color:#fcd34d;font-size:14px">PWD</div>
+        <div class="logo-name">PWD / UP Jal Nigam</div>
+        <div class="logo-full">Public Works &amp; Water Dept, Uttar Pradesh</div>
+        <div class="logo-badge" style="background:rgba(234,179,8,.1);color:#facc15;border:1px solid rgba(234,179,8,.2)">State Govt</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COUNTERS -->
+<div class="counters" id="cnt-sec">
+<div class="container">
+  <div class="cnt-row">
+    <div class="cnt reveal"><div class="cnt-n" data-count="500">0<sup>+</sup></div><div class="cnt-l">Total SKUs</div></div>
+    <div class="cnt-div"></div>
+    <div class="cnt reveal"><div class="cnt-n" data-count="27">0</div><div class="cnt-l">LK Categories</div></div>
+    <div class="cnt-div"></div>
+    <div class="cnt reveal"><div class="cnt-n" data-count="75">0<sup>HP</sup></div><div class="cnt-l">Max Submersible</div></div>
+    <div class="cnt-div"></div>
+    <div class="cnt reveal"><div class="cnt-n" data-count="11">0</div><div class="cnt-l">IVRS Languages</div></div>
+    <div class="cnt-div"></div>
+    <div class="cnt reveal"><div class="cnt-n" data-count="2026">0</div><div class="cnt-l">Price List Year</div></div>
+  </div>
+</div>
+</div>
+
+<!-- GALLERY -->
+<section class="section">
+<div class="container">
+  <div class="s-label reveal">Built for Agriculture</div>
+  <h2 class="s-h2 reveal">POWERING <em>INDIA'S</em> FIELDS</h2>
+  <div class="gal-grid">
+    <div class="gal-item reveal-s"><div class="gal-bg" style="background:linear-gradient(135deg,#002814,#004020)"><span>🌾</span></div><div class="gal-ov"></div><div class="gal-lbl">🌾 Field Irrigation Systems</div></div>
+    <div class="gal-item reveal-s" style="transition-delay:.1s"><div class="gal-bg" style="background:linear-gradient(135deg,#002030,#004050)"><span>💧</span></div><div class="gal-ov"></div><div class="gal-lbl">💧 Submersible Pump Control</div></div>
+    <div class="gal-item reveal-s" style="transition-delay:.2s"><div class="gal-bg" style="background:linear-gradient(135deg,#200030,#3a0060)"><span>🤖</span></div><div class="gal-ov"></div><div class="gal-lbl">🤖 Smart IoT Automation</div></div>
+    <div class="gal-item reveal-s" style="transition-delay:.3s"><div class="gal-bg" style="background:linear-gradient(135deg,#302000,#503500)"><span>🛢️</span></div><div class="gal-ov"></div><div class="gal-lbl">🛢️ Oil Immersed Starters</div></div>
+    <div class="gal-item reveal-s" style="transition-delay:.4s"><div class="gal-bg" style="background:linear-gradient(135deg,#002030,#00405a)"><span>☀️</span></div><div class="gal-ov"></div><div class="gal-lbl">☀️ Solar Irrigation</div></div>
+  </div>
+</div>
+</section>
+
+<!-- SPOTLIGHT -->
+<section class="section" style="background:var(--cd);border-top:1px solid var(--bd)">
+<div class="container">
+  <div class="spot-grid">
+    <div class="reveal-l">
+      <div class="s-label">⭐ Spotlight</div>
+      <h2 class="s-h2">MU-GS <em>SMART</em><br>CONTROLLERS</h2>
+      <p class="s-p" style="margin-bottom:22px">Control your pump from anywhere in India. The most advanced submersible pump controller on the market today.</p>
+      <div class="spot-feats">
+        <div class="sf"><div class="sf-dot"></div><div class="sf-t"><strong>Remote ON/OFF from Anywhere</strong>SMS, IVRS phone call or mobile App. Works on 2G/3G/4G networks.</div></div>
+        <div class="sf"><div class="sf-dot"></div><div class="sf-t"><strong>Theft Protection Alert</strong>Instant alert if anyone tampers with your pump illegally.</div></div>
+        <div class="sf"><div class="sf-dot"></div><div class="sf-t"><strong>11 Regional Languages</strong>Hindi, Kannada, Telugu, Tamil, Marathi, Gujarati, Punjabi &amp; more.</div></div>
+        <div class="sf"><div class="sf-dot"></div><div class="sf-t"><strong>Complete Protection Built-in</strong>MCB, dry run, phase failure, locked rotor, voltage unbalance.</div></div>
+        <div class="sf"><div class="sf-dot"></div><div class="sf-t"><strong>6 HP to 75 HP Range</strong>DOL (6–10 HP) and FASD (15–75 HP). North, South &amp; East regions.</div></div>
+      </div>
+      <div style="display:flex;gap:12px;margin-top:22px;flex-wrap:wrap">
+        <a class="btn-g" href="#catalog" onclick="filterSec('mugs');return false">View Smart Range</a>
+        <a class="btn-out" href="tel:8126868752">Get Quote</a>
+      </div>
+    </div>
+    <div class="reveal-r">
+      <div class="spot-card">
+        <div class="spot-badge">⭐ IoT Smart · 6–75 HP</div>
+        <h2>MU-GS <em>SMART</em></h2>
+        <p>One device. Total control. Complete protection.</p>
+        <div class="spot-stats">
+          <div class="ss"><div class="ss-n">6–75</div><div class="ss-l">HP Range</div></div>
+          <div class="ss"><div class="ss-n">11</div><div class="ss-l">Languages</div></div>
+          <div class="ss"><div class="ss-n">4G</div><div class="ss-l">LTE Ready</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- WHY US -->
+<section class="section why-bg">
+<div class="container">
+  <div class="s-label reveal">Why Choose Us</div>
+  <h2 class="s-h2 reveal">THE <em>INFRA POWER</em> ADVANTAGE</h2>
+  <div class="why-grid stagger">
+    <div class="why-card"><div class="wc-num">01</div><div class="wc-icon">✅</div><div class="wc-title">100% Genuine Products</div><p class="wc-desc">Authorised LK E&A distributor. Zero counterfeits, full manufacturer warranty on every item sold.</p></div>
+    <div class="why-card"><div class="wc-num">02</div><div class="wc-icon">🚀</div><div class="wc-title">Fast Pan-India Delivery</div><p class="wc-desc">Stocked inventory for popular SKUs. Same-day dispatch for most orders across India.</p></div>
+    <div class="why-card"><div class="wc-num">03</div><div class="wc-icon">📞</div><div class="wc-title">Expert Technical Help</div><p class="wc-desc">Our team helps you choose the right HP, coil voltage, phase &amp; protection type for your pump.</p></div>
+    <div class="why-card"><div class="wc-num">04</div><div class="wc-icon">💰</div><div class="wc-title">Official MRP Pricing</div><p class="wc-desc">All prices as per official LK price list w.e.f. 01.02.2026. Volume discounts available.</p></div>
+    <div class="why-card"><div class="wc-num">05</div><div class="wc-icon">🌐</div><div class="wc-title">Complete Range</div><p class="wc-desc">0.125–75 HP. 1-phase to 3-phase. DOL to FASD to IoT Smart. One stop for all needs.</p></div>
+    <div class="why-card"><div class="wc-num">06</div><div class="wc-icon">🛡️</div><div class="wc-title">After-Sales Support</div><p class="wc-desc">Dedicated complaint helpline 022-6932 7800. Genuine spares. We stand by every sale.</p></div>
+  </div>
+</div>
+</section>
+
+<!-- CATALOG -->
+<section class="catalog-section" id="catalog">
+<div class="container">
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:18px;margin-bottom:28px" class="reveal">
+    <div><div class="s-label">Price List · W.e.f. 01.02.2026</div><h2 class="s-h2">PRODUCT <em>CATALOG</em></h2><p style="font-size:13px;color:var(--mt);margin-top:6px">Click <strong style="color:var(--g)">📞 Enquire</strong> on any product — then call <strong style="color:#fff">81268 68752</strong> to order.</p></div>
+    <div style="position:relative;width:270px"><svg style="position:absolute;left:11px;top:50%;transform:translateY(-50%);color:var(--mt);opacity:.45" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><input type="text" id="top-q" placeholder="Search products, cat. no., HP…" style="width:100%;background:var(--sf);border:1px solid var(--bd);color:var(--tx);font-size:13px;padding:10px 13px 10px 36px;border-radius:10px;outline:none;font-family:Inter,sans-serif;transition:border-color .2s" onfocus="this.style.borderColor='var(--g)'" onblur="this.style.borderColor='var(--bd)'"></div>
+  </div>
+  <div class="cat-ui">
+    <div class="cat-layout">
+      <!-- SIDEBAR -->
+      <div class="cat-sb">
+        <div class="csb-hd">
+          <h3>Categories</h3>
+          <div class="csb-sq"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><input type="text" id="csb-q" placeholder="Filter…"></div>
+        </div>
+        <div class="csb-nav" id="csb-nav">
+          <div class="csb-item on" data-s="all"><span class="csb-dot"></span>All Products</div>
+          <div class="csb-grp">⚙️ SKN Bentex</div>
+          <div class="csb-item" data-s="skn-airbreak-1ph"><span class="csb-dot"></span>Air-Break 1Ø Starters</div>
+          <div class="csb-item" data-s="skn-airbreak-3ph"><span class="csb-dot"></span>Air-Break 3Ø Starters</div>
+          <div class="csb-item" data-s="skn-oil-1ph"><span class="csb-dot"></span>Oil Immersed 1Ø</div>
+          <div class="csb-item" data-s="skn-oil-3ph"><span class="csb-dot"></span>Oil Immersed 3Ø</div>
+          <div class="csb-div"></div>
+          <div class="csb-grp">Lauritz Knudsen · 3Ø</div>
+          <div class="csb-item" data-s="multi-motor"><span class="csb-dot"></span>Multi-Motor Controllers</div>
+          <div class="csb-item" data-s="mk1"><span class="csb-dot"></span>MK1 Starters</div>
+          <div class="csb-item" data-s="mk2"><span class="csb-dot"></span>MK2 Starters</div>
+          <div class="csb-item" data-s="mki"><span class="csb-dot"></span>MK.i (Built-in SPPR)</div>
+          <div class="csb-div"></div>
+          <div class="csb-item" data-s="mumb"><span class="csb-dot"></span>MU / MB Starters</div>
+          <div class="csb-item" data-s="ml"><span class="csb-dot"></span>ML Starters (Heavy)</div>
+          <div class="csb-item" data-s="mn"><span class="csb-dot"></span>MN/ML Enclosed</div>
+          <div class="csb-div"></div>
+          <div class="csb-item" data-s="mua"><span class="csb-dot"></span>MU-Automatic DOL</div>
+          <div class="csb-item" data-s="mum"><span class="csb-dot"></span>MU-M (M-POWER Pro)</div>
+          <div class="csb-item" data-s="mf1"><span class="csb-dot"></span>MF1 Three Phase</div>
+          <div class="csb-item" data-s="md"><span class="csb-dot"></span>MD Starter+</div>
+          <div class="csb-div"></div>
+          <div class="csb-grp">Submersible · 3Ø</div>
+          <div class="csb-item" data-s="mug6"><span class="csb-dot"></span>MU-G6/7.5/10 DOL</div>
+          <div class="csb-item" data-s="mug15"><span class="csb-dot"></span>MU-G15 to G25 FASD</div>
+          <div class="csb-item" data-s="mug30"><span class="csb-dot"></span>MU-G30 to G75 FASD</div>
+          <div class="csb-item" data-s="mugw"><span class="csb-dot"></span>MU-GW (Built-in WLC)</div>
+          <div class="csb-item" data-s="mugs"><span class="csb-dot"></span>⭐ MU-GS Smart</div>
+          <div class="csb-div"></div>
+          <div class="csb-grp">Single Phase</div>
+          <div class="csb-item" data-s="singleph"><span class="csb-dot"></span>Single Phase Starters</div>
+          <div class="csb-item" data-s="mfg1"><span class="csb-dot"></span>MF-G1 Controllers</div>
+          <div class="csb-item" data-s="mrg"><span class="csb-dot"></span>MR-G2/G3 Controllers</div>
+          <div class="csb-item" data-s="mrgi"><span class="csb-dot"></span>MR-Gi Digital</div>
+          <div class="csb-div"></div>
+          <div class="csb-grp">Accessories</div>
+          <div class="csb-item" data-s="mpower"><span class="csb-dot"></span>M-POWER Modules</div>
+          <div class="csb-item" data-s="autowlc"><span class="csb-dot"></span>Auto WLC</div>
+          <div class="csb-item" data-s="sasdz5"><span class="csb-dot"></span>SASDz5 / Sz1A</div>
+          <div class="csb-item" data-s="prot"><span class="csb-dot"></span>α-PROTECTOR</div>
+          <div class="csb-div"></div>
+          <div class="csb-grp">Protection &amp; Power</div>
+          <div class="csb-item" data-s="mcb"><span class="csb-dot"></span>MCB K-Curve</div>
+          <div class="csb-item" data-s="mccb"><span class="csb-dot"></span>DY125U MCCB</div>
+          <div class="csb-item" data-s="caps"><span class="csb-dot"></span>PF Capacitors</div>
+          <div class="csb-item" data-s="solar"><span class="csb-dot"></span>☀️ Solar Px3000</div>
+        </div>
+      </div>
+      <!-- MAIN -->
+      <div class="cat-main">
+        <div class="cat-tb">
+          <div class="vt"><button class="vb on" id="vb-l" onclick="setView('list')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></button><button class="vb" id="vb-g" onclick="setView('grid')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></button></div>
+          <div class="pills">
+            <button class="pill on" onclick="qpill(this,'')">All</button>
+            <button class="pill" onclick="qpill(this,'dol')">DOL</button>
+            <button class="pill" onclick="qpill(this,'fasd')">FASD</button>
+            <button class="pill" onclick="qpill(this,'smart')">Smart</button>
+            <button class="pill" onclick="qpill(this,'single')">1-Phase</button>
+            <button class="pill" onclick="qpill(this,'oil')">Oil Immersed</button>
+            <button class="pill" onclick="qpill(this,'mcb')">MCB/MCCB</button>
+          </div>
+          <span class="res-ct" id="res-ct">Loading…</span>
+        </div>
+        <div class="cat-body" id="cat-body">
+          <div id="no-res" style="text-align:center;padding:60px;color:var(--mt)"><div style="font-size:36px;margin-bottom:10px">🔍</div><h3 style="color:var(--tx);margin-bottom:6px">No products found</h3><p>Try a different search or clear filters.</p></div>
+<!-- SKN BENTEX HEADER -->
+<div class="skn-hd"><div style="width:42px;height:42px;border-radius:10px;background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.25);display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0">⚙️</div><div><div style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(245,158,11,.6);margin-bottom:3px">Also Available</div><div style="font-family:Bebas Neue,sans-serif;font-size:22px;letter-spacing:1.5px;color:#fff;line-height:1">SKN BENTEX MOTOR STARTERS</div><div style="font-size:11px;color:rgba(200,175,130,.5);margin-top:2px">Est. 1960 · Oil Immersed &amp; Air Break Starters · Agricultural &amp; Industrial</div></div><a href="tel:8126868752" style="margin-left:auto;flex-shrink:0;display:inline-flex;align-items:center;gap:6px;background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.28);color:#f59e0b;font-size:11px;font-weight:700;padding:7px 13px;border-radius:8px;text-decoration:none">📞 Enquire</a></div>
+
+<!-- SKN AIR-BREAK 1PH -->
+<div class="ps" id="ps-skn-airbreak-1ph" data-kw="skn bentex smc spr single phase air break submersible control panel 1hp 1.5hp 2hp 3hp mcb contactor capacitor digital">
+<div class="ps-banner" style="background:linear-gradient(135deg,#1a0800,#3d1500)"><div class="ps-banner-cnt"><div class="ps-banner-ic">⚡</div><div><h3>SKN Bentex — Air-Break Single Phase Starters</h3><p>SMC &amp; SPR control panels. Digital Meter + MCB + Contactor. 1–3 HP.</p></div></div></div>
+<div class="ps-hd"><div class="ps-ic">⚡</div><div class="ps-info"><h2>SKN Air-Break Single Phase Starters</h2><p>Single Phase Submersible Control Panels with Digital Volt &amp; Amp Meter, Heavy Duty 2-Pole Contactor, C-Type MCB, powder coated enclosure.</p><div class="ps-tags"><span class="ptag" style="background:rgba(245,158,11,.1);border-color:rgba(245,158,11,.25);color:#f59e0b">SKN Bentex</span><span class="ptag g">HSN 85365090</span><span class="ptag">1–3 HP</span><span class="ptag">1Ø 230V</span></div></div></div>
+<span class="sub-t">SMC — with Digital Meter + MCB</span>
+<table class="ptbl"><thead><tr><th>HP</th><th>Contactor</th><th>Start Cap</th><th>Run Cap</th><th>MCB</th><th>Pkg</th><th>MRP (₹)</th><th>Action</th></tr></thead><tbody>
+<tr><td class="hpv">1 HP</td><td>16A 2P</td><td>80–100</td><td>50</td><td>16A</td><td>8</td><td class="pr">3,290</td><td><button class="enq" onclick="enq('SKN SMC 1HP')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">1.5 HP</td><td>16A 2P</td><td>100–120</td><td>72</td><td>20A</td><td>8</td><td class="pr">3,550</td><td><button class="enq" onclick="enq('SKN SMC 1.5HP')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">2 HP</td><td>25A 2P</td><td>120–150</td><td>90</td><td>25A</td><td>8</td><td class="pr">3,821</td><td><button class="enq" onclick="enq('SKN SMC 2HP')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">3 HP</td><td>25A 4P</td><td>150–200</td><td>105</td><td>32A</td><td>8</td><td class="pr">4,516</td><td><button class="enq" onclick="enq('SKN SMC 3HP')">📞 Enquire</button></td></tr>
+</tbody></table>
+<span class="sub-t">SPR — with Overload Relay</span>
+<table class="ptbl"><thead><tr><th>HP</th><th>Contactor</th><th>Start Cap</th><th>Run Cap</th><th>Relay</th><th>Pkg</th><th>MRP (₹)</th><th>Action</th></tr></thead><tbody>
+<tr><td class="hpv">1 HP</td><td>16A 2P</td><td>80–100</td><td>50</td><td>6–10A</td><td>8</td><td class="pr">3,100</td><td><button class="enq" onclick="enq('SKN SPR 1HP')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">1.5 HP</td><td>16A 2P</td><td>100–120</td><td>72</td><td>9–14A</td><td>8</td><td class="pr">3,350</td><td><button class="enq" onclick="enq('SKN SPR 1.5HP')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">2 HP</td><td>25A 2P</td><td>120–150</td><td>90</td><td>13–21A</td><td>8</td><td class="pr">3,600</td><td><button class="enq" onclick="enq('SKN SPR 2HP')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">3 HP</td><td>25A 2P</td><td>150–200</td><td>105</td><td>13–21A</td><td>8</td><td class="pr">4,100</td><td><button class="enq" onclick="enq('SKN SPR 3HP')">📞 Enquire</button></td></tr>
+</tbody></table>
+<div class="info-box info-g">✅ Digital Volt &amp; Amp Meter · Heavy Duty Contactor · C-Type MCB · Powder Coated Enclosure</div></div>
+
+<!-- SKN AIR-BREAK 3PH -->
+<div class="ps" id="ps-skn-airbreak-3ph" data-kw="skn bentex micro inteli safe-on maxx three phase air break dol starter 1hp 2hp 3hp 5hp 7.5hp 10hp 15hp 20hp spp gsm remote">
+<div class="ps-banner" style="background:linear-gradient(135deg,#0a1a00,#1a3a00)"><div class="ps-banner-cnt"><div class="ps-banner-ic">🔌</div><div><h3>SKN Bentex — Air-Break Three Phase Starters</h3><p>Micro, Inteli &amp; Safe-ON Maxx DOL. Built-in MCU + SPP + DC Contactor. 1–20 HP.</p></div></div></div>
+<div class="ps-hd"><div class="ps-ic">🔌</div><div class="ps-info"><h2>SKN Air-Break 3Ø Motor Starters</h2><p>Micro DOL with built-in MCU &amp; DC Contactor for fast switching. Adjustable overload. SPP built-in. Safe-ON Maxx with GSM/GPRS remote.</p><div class="ps-tags"><span class="ptag" style="background:rgba(245,158,11,.1);border-color:rgba(245,158,11,.25);color:#f59e0b">SKN Bentex</span><span class="ptag g">HSN 85371000</span><span class="ptag">1–20 HP</span><span class="ptag">3Ø 415V</span></div></div></div>
+<span class="sub-t">MICRO DOL — 415V 50Hz · Packing: 12 pcs</span>
+<table class="ptbl"><thead><tr><th>HP</th><th>kW</th><th>Relay (A)</th><th>MRP (₹)</th><th>Action</th></tr></thead><tbody>
+<tr><td class="hpv">1 HP</td><td>0.7</td><td>1.5–2.5</td><td class="pr">3,730</td><td><button class="enq" onclick="enq('SKN Micro DOL 1HP')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">2 HP</td><td>1.4</td><td>2.5–4</td><td class="pr">3,730</td><td><button class="enq" onclick="enq('SKN Micro DOL 2HP')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">3 HP</td><td>2.2</td><td>4–6.5</td><td class="pr">3,730</td><td><button class="enq" onclick="enq('SKN Micro DOL 3HP')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">5 HP</td><td>3.7</td><td>6–10</td><td class="pr">3,730</td><td><button class="enq" onclick="enq('SKN Micro DOL 5HP')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">7.5 HP</td><td>5.5</td><td>9–14</td><td class="pr">3,730</td><td><button class="enq" onclick="enq('SKN Micro DOL 7.5HP')">📞 Enquire</button></td></tr>
+</tbody></table>
+<span class="sub-t">INTELI DOL · Packing: 12 pcs</span>
+<table class="ptbl"><thead><tr><th>HP</th><th>kW</th><th>Relay (A)</th><th>MRP (₹)</th><th>Action</th></tr></thead><tbody>
+<tr><td class="hpv">3 HP</td><td>2.2</td><td>4–6.5</td><td class="pr">4,200</td><td><button class="enq" onclick="enq('SKN Inteli DOL 3HP')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">5 HP</td><td>3.7</td><td>6–10</td><td class="pr">4,200</td><td><button class="enq" onclick="enq('SKN Inteli DOL 5HP')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">7.5 HP</td><td>5.5</td><td>9–14</td><td class="pr">4,200</td><td><button class="enq" onclick="enq('SKN Inteli DOL 7.5HP')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">10 HP</td><td>7.5</td><td>13–21</td><td class="pr">4,450</td><td><button class="enq" onclick="enq('SKN Inteli DOL 10HP')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">15 HP</td><td>11</td><td>20–32</td><td class="pr">4,900</td><td><button class="enq" onclick="enq('SKN Inteli DOL 15HP')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">20 HP</td><td>15</td><td>30–42</td><td class="pr">5,400</td><td><button class="enq" onclick="enq('SKN Inteli DOL 20HP')">📞 Enquire</button></td></tr>
+</tbody></table>
+<span class="sub-t">SAFE-ON MAXX — GSM/GPRS Remote Control</span>
+<table class="ptbl"><thead><tr><th>HP</th><th>kW</th><th>Relay (A)</th><th>MRP (₹)</th><th>Action</th></tr></thead><tbody>
+<tr><td class="hpv">3 HP</td><td>2.2</td><td>4–6.5</td><td class="pr">5,800</td><td><button class="enq" onclick="enq('SKN Safe-ON Maxx 3HP')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">5 HP</td><td>3.7</td><td>6–10</td><td class="pr">5,800</td><td><button class="enq" onclick="enq('SKN Safe-ON Maxx 5HP')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">7.5 HP</td><td>5.5</td><td>9–14</td><td class="pr">5,800</td><td><button class="enq" onclick="enq('SKN Safe-ON Maxx 7.5HP')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">10 HP</td><td>7.5</td><td>13–21</td><td class="pr">6,200</td><td><button class="enq" onclick="enq('SKN Safe-ON Maxx 10HP')">📞 Enquire</button></td></tr>
+</tbody></table>
+<div class="info-box info-b">📱 Safe-ON Maxx: GSM/GPRS Remote ON/OFF · Dry Run · Phase Failure/Reversal · Overcurrent · SMS Alerts · Auto Restart</div></div>
+
+<!-- SKN OIL 1PH -->
+<div class="ps" id="ps-skn-oil-1ph" data-kw="skn bentex boi boi-sp boi-spp oil immersed single phase starter 1hp 1.5hp 2hp 3hp 5hp 7.5hp 10hp capacitor overload relay">
+<div class="ps-banner" style="background:linear-gradient(135deg,#1a0500,#3d0f00)"><div class="ps-banner-cnt"><div class="ps-banner-ic">🛢️</div><div><h3>SKN Bentex — Oil Immersed Single Phase Starters</h3><p>BOI-SP &amp; BOI-SPP. World best-selling range since 1960. 1–10 HP.</p></div></div></div>
+<div class="ps-hd"><div class="ps-ic">🛢️</div><div class="ps-info"><h2>SKN Oil Immersed 1Ø Starters</h2><p>Premium oil immersed starters for single phase agricultural pump motors. BOI-SP (basic) and BOI-SPP (with capacitor &amp; overload relay panel).</p><div class="ps-tags"><span class="ptag" style="background:rgba(245,158,11,.1);border-color:rgba(245,158,11,.25);color:#f59e0b">SKN Bentex</span><span class="ptag g">HSN 85369010</span><span class="ptag">1–10 HP</span><span class="ptag">1Ø Oil Immersed</span></div></div></div>
+<span class="sub-t">BOI-SP — Basic Oil Starter · Packing: 8 pcs</span>
+<table class="ptbl"><thead><tr><th>HP</th><th>Relay (A)</th><th>MRP (₹)</th><th>Action</th></tr></thead><tbody>
+<tr><td class="hpv">1 HP</td><td>6–10</td><td class="pr">2,585</td><td><button class="enq" onclick="enq('SKN BOI-SP 1HP')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">1.5 HP</td><td>9–14</td><td class="pr">2,585</td><td><button class="enq" onclick="enq('SKN BOI-SP 1.5HP')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">2 HP</td><td>13–21</td><td class="pr">2,585</td><td><button class="enq" onclick="enq('SKN BOI-SP 2HP')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">3 HP</td><td>13–21</td><td class="pr">2,683</td><td><button class="enq" onclick="enq('SKN BOI-SP 3HP')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">5 HP</td><td>25–35</td><td class="pr">2,904</td><td><button class="enq" onclick="enq('SKN BOI-SP 5HP')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">7.5 HP</td><td>40–62</td><td class="pr">2,904</td><td><button class="enq" onclick="enq('SKN BOI-SP 7.5HP')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">10 HP</td><td>50–72</td><td class="pr">3,055</td><td><button class="enq" onclick="enq('SKN BOI-SP 10HP')">📞 Enquire</button></td></tr>
+</tbody></table>
+<span class="sub-t">BOI-SPP — With Capacitor &amp; Overload Relay Panel · Packing: 4 pcs</span>
+<table class="ptbl"><thead><tr><th>HP</th><th>MRP (₹)</th><th>Note</th><th>Action</th></tr></thead><tbody>
+<tr><td class="hpv">1 &amp; 2 HP</td><td class="pr">5,092</td><td>With capacitor &amp; overload relay</td><td><button class="enq" onclick="enq('SKN BOI-SPP 1-2HP')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">3 HP</td><td class="pr">5,271</td><td>₹160 extra for 20–32A relay</td><td><button class="enq" onclick="enq('SKN BOI-SPP 3HP')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">5 HP</td><td class="pr">6,700</td><td>With capacitor &amp; overload relay</td><td><button class="enq" onclick="enq('SKN BOI-SPP 5HP')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">7.5 HP</td><td class="pr">6,965</td><td>With capacitor &amp; overload relay</td><td><button class="enq" onclick="enq('SKN BOI-SPP 7.5HP')">📞 Enquire</button></td></tr>
+</tbody></table>
+<div class="info-box info-y">🛢️ Oil Immersed Technology · Superior heat dissipation · Longer service life · ISI Marked</div></div>
+
+<!-- SKN OIL 3PH -->
+<div class="ps" id="ps-skn-oil-3ph" data-kw="skn bentex boi bsa oil immersed three phase dol star delta starter 3hp 5hp 7.5hp 10hp 15hp 20hp 25hp 30hp 50hp boi-l boi-hd bsa-l bsa-hd agricultural">
+<div class="ps-banner" style="background:linear-gradient(135deg,#00101a,#002040)"><div class="ps-banner-cnt"><div class="ps-banner-ic">🏭</div><div><h3>SKN Bentex — Oil Immersed Three Phase Starters</h3><p>BOI L/HD (DOL) &amp; BSA L/HD (Star-Delta). 3–50 HP.</p></div></div></div>
+<div class="ps-hd"><div class="ps-ic">🏭</div><div class="ps-info"><h2>SKN Oil Immersed 3Ø Starters</h2><p>BOI L (Standard) &amp; BOI HD (Heavy Duty) DOL starters. BSA L/HD Star-Delta for larger motors. 3–50 HP.</p><div class="ps-tags"><span class="ptag" style="background:rgba(245,158,11,.1);border-color:rgba(245,158,11,.25);color:#f59e0b">SKN Bentex</span><span class="ptag g">HSN 85369010</span><span class="ptag">3–50 HP</span><span class="ptag">3Ø DOL &amp; Star-Delta</span></div></div></div>
+<span class="sub-t">BOI L / BOI HD — DOL Oil Starter · Packing: 8 pcs</span>
+<table class="ptbl"><thead><tr><th>HP</th><th>Relay (A)</th><th>Motor Current (A)</th><th>BOI L (₹)</th><th>BOI HD (₹)</th><th>Action</th></tr></thead><tbody>
+<tr><td class="hpv">3 HP</td><td>4–6.5</td><td>6–10</td><td class="pr">2,580</td><td class="pr">2,971</td><td><button class="enq" onclick="enq('SKN BOI 3HP 3Ph DOL')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">5 HP</td><td>6–10</td><td>6–10</td><td class="pr">2,580</td><td class="pr">2,971</td><td><button class="enq" onclick="enq('SKN BOI 5HP 3Ph DOL')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">7.5 HP</td><td>9–14</td><td>10–17</td><td class="pr">2,580</td><td class="pr">2,971</td><td><button class="enq" onclick="enq('SKN BOI 7.5HP 3Ph DOL')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">10 HP</td><td>13–21</td><td>10–17</td><td class="pr">2,687</td><td class="pr">2,971</td><td><button class="enq" onclick="enq('SKN BOI 10HP 3Ph DOL')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">15 HP</td><td>20–32</td><td>15–24</td><td class="pr">2,750</td><td class="pr">3,224</td><td><button class="enq" onclick="enq('SKN BOI 15HP 3Ph DOL')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">20 HP</td><td>30–42</td><td>22–35</td><td class="pr">2,827</td><td class="pr">3,224</td><td><button class="enq" onclick="enq('SKN BOI 20HP 3Ph DOL')">📞 Enquire</button></td></tr>
+</tbody></table>
+<span class="sub-t">BSA L / BSA HD — Star-Delta Oil Starter · Packing: 4 pcs</span>
+<table class="ptbl"><thead><tr><th>HP</th><th>Relay (A)</th><th>Motor Current (A)</th><th>BSA L (₹)</th><th>BSA HD (₹)</th><th>Action</th></tr></thead><tbody>
+<tr><td class="hpv">5 HP</td><td>4–6.5</td><td>6–10</td><td class="pr">4,250</td><td class="pr">4,750</td><td><button class="enq" onclick="enq('SKN BSA 5HP Star-Delta')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">7.5 HP</td><td>6–10</td><td>10–17</td><td class="pr">4,250</td><td class="pr">4,750</td><td><button class="enq" onclick="enq('SKN BSA 7.5HP Star-Delta')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">10 HP</td><td>9–14</td><td>10–17</td><td class="pr">4,250</td><td class="pr">4,750</td><td><button class="enq" onclick="enq('SKN BSA 10HP Star-Delta')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">15 HP</td><td>13–21</td><td>15–24</td><td class="pr">4,650</td><td class="pr">5,200</td><td><button class="enq" onclick="enq('SKN BSA 15HP Star-Delta')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">20 HP</td><td>20–32</td><td>22–35</td><td class="pr">5,200</td><td class="pr">5,800</td><td><button class="enq" onclick="enq('SKN BSA 20HP Star-Delta')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">25 HP</td><td>30–42</td><td>30–48</td><td class="pr">5,800</td><td class="pr">6,400</td><td><button class="enq" onclick="enq('SKN BSA 25HP Star-Delta')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">30 HP</td><td>40–62</td><td>38–60</td><td class="pr">6,400</td><td class="pr">7,200</td><td><button class="enq" onclick="enq('SKN BSA 30HP Star-Delta')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">50 HP</td><td>50–72</td><td>50–80</td><td class="pr">8,200</td><td class="pr">9,500</td><td><button class="enq" onclick="enq('SKN BSA 50HP Star-Delta')">📞 Enquire</button></td></tr>
+</tbody></table>
+<div class="info-box info-y">⚙️ Star-Delta reduces starting current by 1/3 · L = Standard · HD = Heavy Duty · ISI Marked</div></div>
+
+<!-- DIVIDER -->
+<div style="display:flex;align-items:center;gap:14px;margin:24px 0 18px"><div style="flex:1;height:1px;background:var(--bd)"></div><div style="background:var(--g);color:#000;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:20px;white-space:nowrap">Lauritz Knudsen Products</div><div style="flex:1;height:1px;background:var(--bd)"></div></div>
+
+<!-- MK1 -->
+<div class="ps" id="ps-mk1" data-kw="mk1 dol sasd fasd ss96210 ss96211 ss96255 ss96254 ss96259 three phase 415v motor starter 0.25hp 0.5hp 1hp 2hp 4hp 6hp 7.5hp">
+<div class="ps-banner" style="background:linear-gradient(135deg,#0a0d1a,#151a40)"><div class="ps-banner-cnt"><div class="ps-banner-ic">🔌</div><div><h3>MK1 Starters — DOL, SASD &amp; FASD</h3><p>3-phase 415V motor starters. 0.25–7.5 HP. Wide Band Coil option.</p></div></div></div>
+<div class="ps-hd"><div class="ps-ic">🔌</div><div class="ps-info"><h2>MK1 Three-Phase Starters</h2><p>Multiple relay &amp; coil voltage options. Wide Band Coil (360V-W) available. ISI marked.</p><div class="ps-tags"><span class="ptag g">HSN 8536/8538</span><span class="ptag">0.25–7.5 HP</span><span class="ptag">3Ø 415V</span></div></div></div>
+<span class="sub-t">DOL Starters</span>
+<table class="ptbl"><thead><tr><th>HP</th><th>Relay (A)</th><th>Cat No (360V-W)</th><th>Cat No (360V)</th><th>Cat No (400/440V)</th><th>Pkg</th><th>MRP (₹)</th><th>Action</th></tr></thead><tbody>
+<tr><td class="hpv">0.25</td><td>0.6–1</td><td>—</td><td>—</td><td class="sku">SS96210POKO</td><td>10</td><td class="pr">3,292</td><td><button class="enq" onclick="enq('MK1 DOL 0.25HP SS96210POKO')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">0.5</td><td>1–1.6</td><td>—</td><td class="sku">SS96210COMO</td><td class="sku">SS96210POMO</td><td>10</td><td class="pr">3,292</td><td><button class="enq" onclick="enq('MK1 DOL 0.5HP SS96210POMO')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">1</td><td>1.5–2.5</td><td>—</td><td class="sku">SS96210COPO</td><td class="sku">SS96210POPO</td><td>10</td><td class="pr">3,292</td><td><button class="enq" onclick="enq('MK1 DOL 1HP SS96210POPO')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">2</td><td>2.5–4</td><td>—</td><td class="sku">SS96210CORO</td><td class="sku">SS96210PORO</td><td>10</td><td class="pr">3,292</td><td><button class="enq" onclick="enq('MK1 DOL 2HP SS96210PORO')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">4</td><td>4–6.5</td><td class="sku">SS96210SOTO</td><td class="sku">SS96210COTO</td><td class="sku">SS96210POTO</td><td>10</td><td class="pr">3,292</td><td><button class="enq" onclick="enq('MK1 DOL 4HP SS96210POTO')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">6</td><td>6–10</td><td class="sku">SS96210SOVO</td><td class="sku">SS96210COVO</td><td class="sku">SS96210POVO</td><td>10</td><td class="pr">3,292</td><td><button class="enq" onclick="enq('MK1 DOL 6HP SS96210POVO')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">7.5</td><td>9–14</td><td class="sku">SS96210SOAO</td><td class="sku">SS96210COAO</td><td class="sku">SS96210POAO</td><td>10</td><td class="pr">3,292</td><td><button class="enq" onclick="enq('MK1 DOL 7.5HP SS96210POAO')">📞 Enquire</button></td></tr>
+</tbody></table>
+<span class="sub-t">SASD Starters</span>
+<table class="ptbl"><thead><tr><th>HP</th><th>Relay (A)</th><th>Cat No (360V)</th><th>Cat No (440V)</th><th>Pkg</th><th>MRP (₹)</th><th>Action</th></tr></thead><tbody>
+<tr><td class="hpv">6</td><td>4–6.5</td><td class="sku">SS96255COTO</td><td>—</td><td>1</td><td class="pr">13,230</td><td><button class="enq" onclick="enq('MK1 SASD 6HP SS96255COTO')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">10</td><td>6–10</td><td class="sku">SS96255COVO</td><td class="sku">SS96255POVO</td><td>1</td><td class="pr">13,230</td><td><button class="enq" onclick="enq('MK1 SASD 10HP')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">15</td><td>9–14</td><td class="sku">SS96255COAO</td><td class="sku">SS96255POAO</td><td>1</td><td class="pr">13,230</td><td><button class="enq" onclick="enq('MK1 SASD 15HP')">📞 Enquire</button></td></tr>
+</tbody></table>
+<span class="sub-t">FASD Starters (with ST100 Timer)</span>
+<table class="ptbl"><thead><tr><th>HP</th><th>Relay (A)</th><th>Cat No (360V)</th><th>Cat No (440V)</th><th>Pkg</th><th>MRP (₹)</th><th>Action</th></tr></thead><tbody>
+<tr><td class="hpv">6</td><td>4–6.5</td><td class="sku">SS96254COTO</td><td class="sku">SS96254POTO</td><td>1</td><td class="pr">15,660</td><td><button class="enq" onclick="enq('MK1 FASD 6HP SS96254POTO')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">10</td><td>6–10</td><td class="sku">SS96254COVO</td><td class="sku">SS96254POVO</td><td>1</td><td class="pr">15,660</td><td><button class="enq" onclick="enq('MK1 FASD 10HP')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">15</td><td>11–18</td><td class="sku">SS96257COCO</td><td class="sku">SS96257POCO</td><td>1</td><td class="pr">15,840</td><td><button class="enq" onclick="enq('MK1 FASD 15HP SS96257POCO')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">15</td><td>13–22</td><td class="sku">SS96259CODO</td><td class="sku">SS96259PODO</td><td>1</td><td class="pr">15,950</td><td><button class="enq" onclick="enq('MK1 FASD 15HP SS96259PODO')">📞 Enquire</button></td></tr>
+</tbody></table></div>
+
+<!-- MK2 -->
+<div class="ps" id="ps-mk2" data-kw="mk2 dol sasd fasd cs90947 cs91582 cs91583 heavy duty 7.5hp 15hp three phase">
+<div class="ps-hd"><div class="ps-ic">🔋</div><div class="ps-info"><h2>MK2 Starters (Heavy Duty)</h2><p>Heavy-duty DOL, SASD &amp; FASD for 7.5–15 HP.</p><div class="ps-tags"><span class="ptag g">HSN 8536/8538</span><span class="ptag">7.5–15 HP</span><span class="ptag">3Ø 415V</span></div></div></div>
+<table class="ptbl"><thead><tr><th>Type</th><th>HP</th><th>Relay (A)</th><th>Cat No (360V-W)</th><th>Cat No (360V)</th><th>Cat No (440V)</th><th>Pkg</th><th>MRP (₹)</th><th>Action</th></tr></thead><tbody>
+<tr><td>DOL</td><td class="hpv">7.5</td><td>13–22</td><td class="sku">CS90947SODO</td><td class="sku">CS90947CODO</td><td class="sku">CS90947PODO</td><td>10</td><td class="pr">4,340</td><td><button class="enq" onclick="enq('MK2 DOL 7.5HP CS90947PODO')">📞 Enquire</button></td></tr>
+<tr><td>DOL</td><td class="hpv">7.5</td><td>20–32</td><td class="sku">CS90947SOEO</td><td class="sku">CS90947COEO</td><td class="sku">CS90947POEO</td><td>10</td><td class="pr">4,340</td><td><button class="enq" onclick="enq('MK2 DOL 7.5HP 20-32A')">📞 Enquire</button></td></tr>
+<tr><td>SASD</td><td class="hpv">15</td><td>13–22</td><td class="sku">CS91582SODO</td><td class="sku">CS91582CODO</td><td class="sku">CS91582PODO</td><td>1</td><td class="pr">14,990</td><td><button class="enq" onclick="enq('MK2 SASD 15HP CS91582PODO')">📞 Enquire</button></td></tr>
+<tr><td>FASD</td><td class="hpv">15</td><td>13–22</td><td>—</td><td class="sku">CS91583CODO</td><td class="sku">CS91583PODO</td><td>1</td><td class="pr">17,790</td><td><button class="enq" onclick="enq('MK2 FASD 15HP CS91583PODO')">📞 Enquire</button></td></tr>
+</tbody></table></div>
+
+<!-- MK.i -->
+<div class="ps" id="ps-mki" data-kw="mk.i mk1.i mk2.i dol cs91646 cs91647 sppr built-in phase protection 4hp 6hp 7.5hp">
+<div class="ps-hd"><div class="ps-ic">⚡</div><div class="ps-info"><h2>MK.i Starters (Built-in SPPR)</h2><p>Built-in Single Phase Preventer. Phase reversal &amp; unbalance protection. Wide Band Coil.</p><div class="ps-tags"><span class="ptag g">HSN 8536</span><span class="ptag">4–7.5 HP</span><span class="ptag g">Built-in SPPR</span></div></div></div>
+<table class="ptbl"><thead><tr><th>Type</th><th>HP</th><th>Relay (A)</th><th>Cat No (360V-W)</th><th>Cat No (360V)</th><th>Cat No (440V)</th><th>Pkg</th><th>MRP (₹)</th><th>Action</th></tr></thead><tbody>
+<tr><td>MK1.i DOL</td><td class="hpv">4</td><td>4–6.5</td><td class="sku">CS91646SOTO</td><td class="sku">CS91646COTO</td><td class="sku">CS91646POTO</td><td>10</td><td class="pr">4,390</td><td><button class="enq" onclick="enq('MK1.i DOL 4HP CS91646POTO')">📞 Enquire</button></td></tr>
+<tr><td>MK1.i DOL</td><td class="hpv">6</td><td>6–10</td><td class="sku">CS91646SOVO</td><td class="sku">CS91646COVO</td><td class="sku">CS91646POVO</td><td>10</td><td class="pr">4,390</td><td><button class="enq" onclick="enq('MK1.i DOL 6HP CS91646POVO')">📞 Enquire</button></td></tr>
+<tr><td>MK1.i DOL</td><td class="hpv">7.5</td><td>9–14</td><td class="sku">CS91646SOAO</td><td class="sku">CS91646COAO</td><td class="sku">CS91646POAO</td><td>10</td><td class="pr">4,390</td><td><button class="enq" onclick="enq('MK1.i DOL 7.5HP CS91646POAO')">📞 Enquire</button></td></tr>
+<tr><td>MK2.i DOL</td><td class="hpv">7.5</td><td>13–22</td><td class="sku">CS91647SODO</td><td class="sku">CS91647CODO</td><td class="sku">CS91647PODO</td><td>10</td><td class="pr">5,150</td><td><button class="enq" onclick="enq('MK2.i DOL 7.5HP CS91647PODO')">📞 Enquire</button></td></tr>
+</tbody></table></div>
+
+<!-- MU/MB -->
+<div class="ps" id="ps-mumb" data-kw="mu mb dol sasd fasd mu1 mu2 mu3 mb1 mb2 ss95647 ss95648 cs90613 7.5hp 10hp 12.5hp 15hp 17.5hp 20hp 30hp 35hp">
+<div class="ps-hd"><div class="ps-ic">🏭</div><div class="ps-info"><h2>MU / MB Heavy Starters</h2><p>MU1–MU3 and MB1–MB2 (MN relay with SPP). 7.5–35 HP. DOL, SASD &amp; FASD.</p><div class="ps-tags"><span class="ptag g">HSN 8536/8538</span><span class="ptag">7.5–35 HP</span><span class="ptag">360V / 415V</span></div></div></div>
+<span class="sub-t">DOL Starters</span>
+<table class="ptbl"><thead><tr><th>Type</th><th>HP</th><th>Relay (A)</th><th>Cat No (360V)</th><th>Cat No (415V)</th><th>Pkg</th><th>MRP (₹)</th><th>Action</th></tr></thead><tbody>
+<tr><td>MU1</td><td class="hpv">7.5</td><td>9–14</td><td class="sku">SS95647COAO</td><td class="sku">SS95647DOAO</td><td>10</td><td class="pr">5,800</td><td><button class="enq" onclick="enq('MU1 DOL 7.5HP SS95647DOAO')">📞 Enquire</button></td></tr>
+<tr><td>MU1</td><td class="hpv">10</td><td>13–21</td><td class="sku">SS95647COCO</td><td class="sku">SS95647DOCO</td><td>10</td><td class="pr">6,020</td><td><button class="enq" onclick="enq('MU1 DOL 10HP SS95647DOCO')">📞 Enquire</button></td></tr>
+<tr><td>MU2</td><td class="hpv">15</td><td>20–32</td><td class="sku">SS95648COEO</td><td class="sku">SS95648DOEO</td><td>10</td><td class="pr">8,180</td><td><button class="enq" onclick="enq('MU2 DOL 15HP SS95648DOEO')">📞 Enquire</button></td></tr>
+<tr><td>MU3</td><td class="hpv">17.5</td><td>28–42</td><td class="sku">CS90613COFO</td><td class="sku">CS90613DOFO</td><td>10</td><td class="pr">9,900</td><td><button class="enq" onclick="enq('MU3 DOL 17.5HP CS90613DOFO')">📞 Enquire</button></td></tr>
+<tr><td>MB1 (MN)</td><td class="hpv">7.5</td><td>9–15</td><td class="sku">SS95649COBO</td><td class="sku">SS95649DOBO</td><td>8</td><td class="pr">7,120</td><td><button class="enq" onclick="enq('MB1 DOL 7.5HP SS95649DOBO')">📞 Enquire</button></td></tr>
+<tr><td>MB2 (MN)</td><td class="hpv">15</td><td>20–33</td><td class="sku">SS95650COEO</td><td class="sku">SS95650DOEO</td><td>8</td><td class="pr">10,300</td><td><button class="enq" onclick="enq('MB2 DOL 15HP SS95650DOEO')">📞 Enquire</button></td></tr>
+</tbody></table>
+<span class="sub-t">FASD Starters</span>
+<table class="ptbl"><thead><tr><th>Type</th><th>HP</th><th>Relay (A)</th><th>Cat No (360V)</th><th>Cat No (415V)</th><th>Pkg</th><th>MRP (₹)</th><th>Action</th></tr></thead><tbody>
+<tr><td>MU1 FASD</td><td class="hpv">12.5</td><td>9–14</td><td class="sku">SS95890COAO</td><td class="sku">SS95890DOAO</td><td>1</td><td class="pr">19,440</td><td><button class="enq" onclick="enq('MU1 FASD 12.5HP')">📞 Enquire</button></td></tr>
+<tr><td>MU2 FASD</td><td class="hpv">20</td><td>13–21</td><td class="sku">SS95892COCO</td><td class="sku">SS95892DOCO</td><td>1</td><td class="pr">23,500</td><td><button class="enq" onclick="enq('MU2 FASD 20HP')">📞 Enquire</button></td></tr>
+<tr><td>MU3 FASD</td><td class="hpv">35</td><td>24–38</td><td class="sku">CS91887COGO</td><td class="sku">CS91887DOGO</td><td>1</td><td class="pr">29,450</td><td><button class="enq" onclick="enq('MU3 FASD 35HP')">📞 Enquire</button></td></tr>
+<tr><td>MB2 FASD</td><td class="hpv">30</td><td>20–33</td><td class="sku">SS95896COEO</td><td class="sku">SS95896DOEO</td><td>1</td><td class="pr">27,700</td><td><button class="enq" onclick="enq('MB2 FASD 30HP')">📞 Enquire</button></td></tr>
+</tbody></table></div>
+
+<!-- ML -->
+<div class="ps" id="ps-ml" data-kw="ml ml1.5 ml2 dol sasd fasd ss91854 ss90702 ss91855 ss90705 heavy duty 7.5hp 15hp 20hp 35hp">
+<div class="ps-hd"><div class="ps-ic">⚙️</div><div class="ps-info"><h2>ML Starters (Heavy Duty)</h2><p>ML1.5 and ML2 DOL &amp; FASD for large pump applications. 7.5–35 HP.</p><div class="ps-tags"><span class="ptag g">HSN 8536/8538</span><span class="ptag">7.5–35 HP</span><span class="ptag">360V / 440V</span></div></div></div>
+<table class="ptbl"><thead><tr><th>Type</th><th>HP</th><th>Relay (A)</th><th>Cat No (360V)</th><th>Cat No (440V)</th><th>Pkg</th><th>MRP (₹)</th><th>Action</th></tr></thead><tbody>
+<tr><td>ML1.5 DOL</td><td class="hpv">7.5</td><td>9–14</td><td class="sku">SS91854COAO</td><td class="sku">SS91854POAO</td><td>1</td><td class="pr">11,660</td><td><button class="enq" onclick="enq('ML1.5 DOL 7.5HP SS91854POAO')">📞 Enquire</button></td></tr>
+<tr><td>ML1.5 DOL</td><td class="hpv">15</td><td>20–32</td><td class="sku">SS91854COEO</td><td class="sku">SS91854POEO</td><td>1</td><td class="pr">11,660</td><td><button class="enq" onclick="enq('ML1.5 DOL 15HP')">📞 Enquire</button></td></tr>
+<tr><td>ML2 DOL</td><td class="hpv">20</td><td>20–32</td><td class="sku">SS90702COEO</td><td class="sku">SS90702POEO</td><td>1</td><td class="pr">20,100</td><td><button class="enq" onclick="enq('ML2 DOL 20HP')">📞 Enquire</button></td></tr>
+<tr><td>ML1.5 FASD</td><td class="hpv">20</td><td>13–21</td><td class="sku">SS91855COCO</td><td class="sku">SS91855POCO</td><td>1</td><td class="pr">33,500</td><td><button class="enq" onclick="enq('ML1.5 FASD 20HP')">📞 Enquire</button></td></tr>
+<tr><td>ML2 FASD</td><td class="hpv">35</td><td>20–32</td><td class="sku">SS90705COEO</td><td class="sku">SS90705POEO</td><td>1</td><td class="pr">54,200</td><td><button class="enq" onclick="enq('ML2 FASD 35HP')">📞 Enquire</button></td></tr>
+</tbody></table></div>
+
+<!-- MN -->
+<div class="ps" id="ps-mn" data-kw="mn ml enclosed sheet-steel dol fasd ss94351 ss94353 ss94018 ss94364 ss94022 ss94707 10hp 20hp 45hp 75hp 180hp panel enclosure">
+<div class="ps-hd"><div class="ps-ic">🏗️</div><div class="ps-info"><h2>MN / ML Starters in Enclosure</h2><p>DOL and FASD starters 10–180 HP in sheet-steel enclosures. MN16 through MN140.</p><div class="ps-tags"><span class="ptag g">HSN 8536</span><span class="ptag">10–180 HP</span><span class="ptag g">Enclosed Panel</span></div></div></div>
+<table class="ptbl"><thead><tr><th>HP</th><th>kW</th><th>Relay (A)</th><th>Type</th><th>Cat. No.</th><th>MRP</th><th>Action</th></tr></thead><tbody>
+<tr><td class="hpv">10</td><td>7.5</td><td>9–15</td><td>MN16 DOL</td><td class="sku">SS94351</td><td><span class="por">POR</span></td><td><button class="enq" onclick="enq('MN16 DOL 10HP')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">20</td><td>15</td><td>20–33</td><td>MN32 DOL</td><td class="sku">SS94353</td><td><span class="por">POR</span></td><td><button class="enq" onclick="enq('MN32 DOL 20HP')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">45</td><td>33.5</td><td>45–75</td><td>MN65 DOL</td><td class="sku">SS94018</td><td><span class="por">POR</span></td><td><button class="enq" onclick="enq('MN65 DOL 45HP')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">30</td><td>22.5</td><td>14–23</td><td>MN25 FASD</td><td class="sku">SS94364</td><td><span class="por">POR</span></td><td><button class="enq" onclick="enq('MN25 FASD 30HP')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">75</td><td>55</td><td>45–75</td><td>MN65 FASD</td><td class="sku">SS94022</td><td><span class="por">POR</span></td><td><button class="enq" onclick="enq('MN65 FASD 75HP')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">180</td><td>132</td><td>90–150</td><td>MN140 FASD</td><td class="sku">SS94707</td><td><span class="por">POR</span></td><td><button class="enq" onclick="enq('MN140 FASD 180HP')">📞 Enquire</button></td></tr>
+</tbody></table></div>
+
+<!-- MU-AUTO -->
+<div class="ps" id="ps-mua" data-kw="mu-automatic mu-1a mu-2a mu-3a dol cs90898 cs90900 cs90901 sppr sz5 emergency 3hp 7.5hp 10hp 15hp 17.5hp">
+<div class="ps-hd"><div class="ps-ic">🔄</div><div class="ps-info"><h2>MU-Automatic DOL Starters</h2><p>Built-in Sz5 SPPR. Emergency OFF rocker. Auto/Manual mode. 3–17.5 HP.</p><div class="ps-tags"><span class="ptag g">HSN 8536</span><span class="ptag">3–17.5 HP</span><span class="ptag g">Sz5 SPPR</span></div></div></div>
+<table class="ptbl"><thead><tr><th>Type</th><th>HP</th><th>Relay (A)</th><th>Cat No (360V)</th><th>Cat No (415V)</th><th>Pkg</th><th>MRP (₹)</th><th>Action</th></tr></thead><tbody>
+<tr><td>MU-1A</td><td class="hpv">3</td><td>4–6.5</td><td class="sku">CS90898COTO</td><td class="sku">CS90898DOTO</td><td>1</td><td class="pr">8,420</td><td><button class="enq" onclick="enq('MU-1A DOL 3HP CS90898DOTO')">📞 Enquire</button></td></tr>
+<tr><td>MU-1A</td><td class="hpv">7.5</td><td>9–14</td><td class="sku">CS90898COAO</td><td class="sku">CS90898DOAO</td><td>1</td><td class="pr">8,570</td><td><button class="enq" onclick="enq('MU-1A DOL 7.5HP CS90898DOAO')">📞 Enquire</button></td></tr>
+<tr><td>MU-1A</td><td class="hpv">10</td><td>13–21</td><td class="sku">CS90898COCO</td><td class="sku">CS90898DOCO</td><td>1</td><td class="pr">8,730</td><td><button class="enq" onclick="enq('MU-1A DOL 10HP CS90898DOCO')">📞 Enquire</button></td></tr>
+<tr><td>MU-2A</td><td class="hpv">15</td><td>20–32</td><td class="sku">CS90900COEO</td><td class="sku">CS90900DOEO</td><td>1</td><td class="pr">10,830</td><td><button class="enq" onclick="enq('MU-2A DOL 15HP CS90900DOEO')">📞 Enquire</button></td></tr>
+<tr><td>MU-3A</td><td class="hpv">17.5</td><td>28–42</td><td class="sku">CS90901COFO</td><td class="sku">CS90901DOFO</td><td>1</td><td class="pr">11,730</td><td><button class="enq" onclick="enq('MU-3A DOL 17.5HP CS90901DOFO')">📞 Enquire</button></td></tr>
+</tbody></table></div>
+
+<!-- MU-M -->
+<div class="ps" id="ps-mum" data-kw="mu-m mpower mu-1m mu-2m mu-3m cs92215 cs92217 cs92218 sms ivrs app remote 3hp 7.5hp 15hp 20hp">
+<div class="ps-hd"><div class="ps-ic">📱</div><div class="ps-info"><h2>MU-M DOL (M-POWER Pro Built-in)</h2><p>In-built M-POWER Pro. SMS/IVRS/App/Call control. Up to 4 users + 1 master. 3–20 HP.</p><div class="ps-tags"><span class="ptag g">HSN 8536</span><span class="ptag">3–20 HP</span><span class="ptag g">M-POWER Built-in</span></div></div></div>
+<table class="ptbl"><thead><tr><th>Type</th><th>HP</th><th>Relay (A)</th><th>Cat No (360V)</th><th>Cat No (415V)</th><th>Pkg</th><th>MRP (₹)</th><th>Action</th></tr></thead><tbody>
+<tr><td>MU-1M</td><td class="hpv">3</td><td>4–6.5</td><td class="sku">CS92215COTO</td><td class="sku">CS92215DOTO</td><td>1</td><td class="pr">24,700</td><td><button class="enq" onclick="enq('MU-1M 3HP CS92215DOTO')">📞 Enquire</button></td></tr>
+<tr><td>MU-1M</td><td class="hpv">7.5</td><td>9–14</td><td class="sku">CS92215COAO</td><td class="sku">CS92215DOAO</td><td>1</td><td class="pr">24,700</td><td><button class="enq" onclick="enq('MU-1M 7.5HP CS92215DOAO')">📞 Enquire</button></td></tr>
+<tr><td>MU-2M</td><td class="hpv">15</td><td>20–32</td><td class="sku">CS92217COEO</td><td class="sku">CS92217DOEO</td><td>1</td><td class="pr">26,400</td><td><button class="enq" onclick="enq('MU-2M 15HP CS92217DOEO')">📞 Enquire</button></td></tr>
+<tr><td>MU-3M</td><td class="hpv">20</td><td>28–42</td><td class="sku">CS92218COFO</td><td class="sku">CS92218DOFO</td><td>1</td><td class="pr">27,800</td><td><button class="enq" onclick="enq('MU-3M 20HP CS92218DOFO')">📞 Enquire</button></td></tr>
+</tbody></table></div>
+
+<!-- MF1 -->
+<div class="ps" id="ps-mf1" data-kw="mf1 three phase ss97210 0.125hp 0.25hp 2hp 4hp 7.5hp make-to-order">
+<div class="ps-hd"><div class="ps-ic">🔩</div><div class="ps-info"><h2>MF1 Three Phase Starters</h2><p>DOL 3-phase starters 0.125–7.5 HP. Make-to-order — contact sales office.</p><div class="ps-tags"><span class="ptag g">HSN 8536</span><span class="ptag">0.125–7.5 HP</span><span class="ptag">Make-to-Order</span></div></div></div>
+<table class="ptbl"><thead><tr><th>HP</th><th>Relay (A)</th><th>Cat. No.</th><th>Pkg</th><th>MRP (₹)</th><th>Action</th></tr></thead><tbody>
+<tr><td class="hpv">0.125</td><td>0.4–0.65</td><td class="sku">SS97210OOHO</td><td>1</td><td class="pr">3,450</td><td><button class="enq" onclick="enq('MF1 0.125HP SS97210OOHO')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">0.25</td><td>0.6–1</td><td class="sku">SS97210OOKO</td><td>1</td><td class="pr">3,450</td><td><button class="enq" onclick="enq('MF1 0.25HP SS97210OOKO')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">2</td><td>2.5–4</td><td class="sku">SS97210OORO</td><td>1</td><td class="pr">3,450</td><td><button class="enq" onclick="enq('MF1 2HP SS97210OORO')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">4</td><td>4–6.5</td><td class="sku">SS97210OOTO</td><td>1</td><td class="pr">3,450</td><td><button class="enq" onclick="enq('MF1 4HP SS97210OOTO')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">7.5</td><td>9–15</td><td class="sku">SS97210OOBO</td><td>1</td><td class="pr">3,450</td><td><button class="enq" onclick="enq('MF1 7.5HP SS97210OOBO')">📞 Enquire</button></td></tr>
+</tbody></table></div>
+
+<!-- MD -->
+<div class="ps" id="ps-md" data-kw="md starter+ md1 md2 md3 adsm vdsm cs91753 cs91754 cs91755 cs91756 protector dol 7.5hp 10hp 12.5hp 15hp 20hp">
+<div class="ps-hd"><div class="ps-ic">🛡️</div><div class="ps-info"><h2>MD Starter+ (α-PROTECTOR Built-in)</h2><p>DOL starters with built-in α-PROTECTOR. Complete motor protection. 5–20 HP.</p><div class="ps-tags"><span class="ptag g">HSN 8536</span><span class="ptag">5–20 HP</span><span class="ptag g">α-PROTECTOR</span></div></div></div>
+<table class="ptbl"><thead><tr><th>Type</th><th>HP</th><th>Relay (A)</th><th>Cat No (360V)</th><th>Cat No (415V)</th><th>Pkg</th><th>MRP (₹)</th><th>Action</th></tr></thead><tbody>
+<tr><td>MD1-iU</td><td class="hpv">7.5</td><td>9–14</td><td class="sku">CS91753COAO</td><td class="sku">CS91753DOAO</td><td>1</td><td class="pr">11,920</td><td><button class="enq" onclick="enq('MD1-iU 7.5HP CS91753DOAO')">📞 Enquire</button></td></tr>
+<tr><td>MD1-iU</td><td class="hpv">10</td><td>13–21</td><td class="sku">CS91753COCO</td><td class="sku">CS91753DOCO</td><td>1</td><td class="pr">12,000</td><td><button class="enq" onclick="enq('MD1-iU 10HP CS91753DOCO')">📞 Enquire</button></td></tr>
+<tr><td>MD1H-iU</td><td class="hpv">12.5</td><td>20–32</td><td class="sku">CS91754COEO</td><td class="sku">CS91754DOEO</td><td>1</td><td class="pr">12,570</td><td><button class="enq" onclick="enq('MD1H-iU 12.5HP CS91754DOEO')">📞 Enquire</button></td></tr>
+<tr><td>MD2-iU</td><td class="hpv">15</td><td>20–32</td><td class="sku">CS91755COEO</td><td class="sku">CS91755DOEO</td><td>1</td><td class="pr">13,690</td><td><button class="enq" onclick="enq('MD2-iU 15HP CS91755DOEO')">📞 Enquire</button></td></tr>
+<tr><td>MD3-iU</td><td class="hpv">20</td><td>28–42</td><td class="sku">CS91756COFO</td><td class="sku">CS91756DOFO</td><td>1</td><td class="pr">14,500</td><td><button class="enq" onclick="enq('MD3-iU 20HP CS91756DOFO')">📞 Enquire</button></td></tr>
+</tbody></table></div>
+
+<!-- MU-G6/7.5/10 -->
+<div class="ps" id="ps-mug6" data-kw="mu-g6 mu-g7.5 mu-g10 dol submersible wideband ss97756 cs92103 ss95983 cs92102 ss95974 sppr 3hp 5hp 6hp 7.5hp 10hp bore well">
+<div class="ps-banner" style="background:linear-gradient(135deg,#001520,#003040)"><div class="ps-banner-cnt"><div class="ps-banner-ic">💧</div><div><h3>MU-G6 / G7.5 / G10 DOL</h3><p>3-phase submersible pump controllers. SPPR built-in. Wide Band Coil 200V–400V. 3–10 HP.</p></div></div></div>
+<div class="ps-hd"><div class="ps-ic">💧</div><div class="ps-info"><h2>MU-G6 / G7.5 / G10 DOL Controllers</h2><p>3-phase submersible pump controllers with built-in SPPR. Wide Band Coil. For India's bore-wells.</p><div class="ps-tags"><span class="ptag g">HSN 8536</span><span class="ptag">3–10 HP</span><span class="ptag g">SPPR Built-in</span><span class="ptag">Wideband Coil</span></div></div></div>
+<table class="ptbl"><thead><tr><th>Type</th><th>HP</th><th>Relay (A)</th><th>Cat No (360V)</th><th>Cat No (415V)</th><th>Pkg</th><th>MRP (₹)</th><th>Action</th></tr></thead><tbody>
+<tr><td>MU-G6</td><td class="hpv">3</td><td>4–6.5</td><td class="sku">SS97756COTO</td><td>—</td><td>1</td><td class="pr">10,450</td><td><button class="enq" onclick="enq('MU-G6 3HP SS97756COTO')">📞 Enquire</button></td></tr>
+<tr><td>MU-G6</td><td class="hpv">5</td><td>6–10</td><td class="sku">SS97756COVO</td><td>—</td><td>1</td><td class="pr">10,450</td><td><button class="enq" onclick="enq('MU-G6 5HP SS97756COVO')">📞 Enquire</button></td></tr>
+<tr><td>MU-G6</td><td class="hpv">6</td><td>9–14</td><td class="sku">SS97756COAO</td><td>—</td><td>1</td><td class="pr">10,450</td><td><button class="enq" onclick="enq('MU-G6 6HP SS97756COAO')">📞 Enquire</button></td></tr>
+<tr><td>MU-G7.5</td><td class="hpv">7.5</td><td>13–22</td><td class="sku">CS92103SODO</td><td>—</td><td>1</td><td class="pr">11,150</td><td><button class="enq" onclick="enq('MU-G7.5 7.5HP CS92103SODO')">📞 Enquire</button></td></tr>
+<tr><td>MU-G10</td><td class="hpv">5</td><td>6–10</td><td class="sku">SS95983COVO</td><td class="sku">SS95983DOVO</td><td>1</td><td class="pr">12,200</td><td><button class="enq" onclick="enq('MU-G10 5HP SS95983DOVO')">📞 Enquire</button></td></tr>
+<tr><td>MU-G10</td><td class="hpv">10</td><td>13–21</td><td class="sku">SS95983COCO</td><td class="sku">SS95983DOCO</td><td>1</td><td class="pr">12,580</td><td><button class="enq" onclick="enq('MU-G10 10HP SS95983DOCO')">📞 Enquire</button></td></tr>
+<tr><td>MU-G10HN</td><td class="hpv">10</td><td>20–32</td><td class="sku">CS92102COEO</td><td class="sku">CS92102DOEO</td><td>1</td><td class="pr">13,020</td><td><button class="enq" onclick="enq('MU-G10HN 10HP CS92102DOEO')">📞 Enquire</button></td></tr>
+<tr><td>MU-G10H</td><td class="hpv">10</td><td>28–42</td><td class="sku">SS95974COFO</td><td class="sku">SS95974DOFO</td><td>1</td><td class="pr">14,570</td><td><button class="enq" onclick="enq('MU-G10H 10HP SS95974DOFO')">📞 Enquire</button></td></tr>
+</tbody></table></div>
+
+<!-- MU-G15 to G25 -->
+<div class="ps" id="ps-mug15" data-kw="mu-g15 mu-g17.5 mu-g20 mu-g20h mu-g20hn mu-g25 fasd cs94091 cs91880 ss95984 cs92101 ss95975 cs91969 submersible 10hp 15hp 17.5hp 20hp 25hp">
+<div class="ps-hd"><div class="ps-ic">💧</div><div class="ps-info"><h2>MU-G15 / G17.5 / G20 / G25 FASD</h2><p>FASD submersible pump controllers 7.5–25 HP with SPPR. Wide Band Coil. Heavy-duty variants available.</p><div class="ps-tags"><span class="ptag g">HSN 8536</span><span class="ptag">7.5–25 HP</span><span class="ptag g">FASD + SPPR</span></div></div></div>
+<table class="ptbl"><thead><tr><th>Type</th><th>HP</th><th>Relay (A)</th><th>Cat No (360V)</th><th>Cat No (415V)</th><th>Pkg</th><th>MRP (₹)</th><th>Action</th></tr></thead><tbody>
+<tr><td>MU-G15</td><td class="hpv">10</td><td>9–14</td><td class="sku">CS94091SOAO</td><td>—</td><td>1</td><td class="pr">20,300</td><td><button class="enq" onclick="enq('MU-G15 10HP CS94091SOAO')">📞 Enquire</button></td></tr>
+<tr><td>MU-G15</td><td class="hpv">15</td><td>13–22</td><td class="sku">CS94091SODO</td><td>—</td><td>1</td><td class="pr">20,590</td><td><button class="enq" onclick="enq('MU-G15 15HP CS94091SODO')">📞 Enquire</button></td></tr>
+<tr><td>MU-G17.5</td><td class="hpv">17.5</td><td>13–22</td><td class="sku">CS91880SODO</td><td>—</td><td>1</td><td class="pr">22,500</td><td><button class="enq" onclick="enq('MU-G17.5 17.5HP CS91880SODO')">📞 Enquire</button></td></tr>
+<tr><td>MU-G20</td><td class="hpv">15/20</td><td>13–21</td><td class="sku">SS95984COCO</td><td class="sku">SS95984DOCO</td><td>1</td><td class="pr">24,150</td><td><button class="enq" onclick="enq('MU-G20 20HP SS95984DOCO')">📞 Enquire</button></td></tr>
+<tr><td>MU-G20HN</td><td class="hpv">20</td><td>20–32</td><td class="sku">CS92101COEO</td><td class="sku">CS92101DOEO</td><td>1</td><td class="pr">25,570</td><td><button class="enq" onclick="enq('MU-G20HN 20HP CS92101DOEO')">📞 Enquire</button></td></tr>
+<tr><td>MU-G20H</td><td class="hpv">20</td><td>28–42</td><td class="sku">SS95975COFO</td><td class="sku">SS95975DOFO</td><td>1</td><td class="pr">30,450</td><td><button class="enq" onclick="enq('MU-G20H 20HP SS95975DOFO')">📞 Enquire</button></td></tr>
+<tr><td>MU-G25</td><td class="hpv">25</td><td>24–38</td><td class="sku">CS91969COGO</td><td class="sku">CS91969DOGO</td><td>1</td><td class="pr">36,450</td><td><button class="enq" onclick="enq('MU-G25 25HP CS91969DOGO')">📞 Enquire</button></td></tr>
+<tr><td>MU-G25</td><td class="hpv">25</td><td>28–42</td><td class="sku">CS91969COFO</td><td class="sku">CS91969DOFO</td><td>1</td><td class="pr">36,780</td><td><button class="enq" onclick="enq('MU-G25 25HP CS91969DOFO')">📞 Enquire</button></td></tr>
+</tbody></table></div>
+
+<!-- MU-G30 to G75 -->
+<div class="ps" id="ps-mug30" data-kw="mu-g30 mu-g40 mu-g50 mu-g75 fasd cs96008 cs90908 cs96009 cs96451 20hp 30hp 40hp 50hp 75hp large pump ml contactor">
+<div class="ps-hd"><div class="ps-ic">🏋️</div><div class="ps-info"><h2>MU-G30 / G40 / G50 / G75 FASD</h2><p>High-capacity FASD submersible controllers with ML Contactor. 380V Wide Band Coil. 20–75 HP.</p><div class="ps-tags"><span class="ptag g">HSN 8536</span><span class="ptag">20–75 HP</span><span class="ptag">ML Contactor</span></div></div></div>
+<table class="ptbl"><thead><tr><th>Type</th><th>HP</th><th>Relay (A)</th><th>Cat. No. (380V)</th><th>Pkg</th><th>MRP (₹)</th><th>Action</th></tr></thead><tbody>
+<tr><td>MU-G30 FASD</td><td class="hpv">20</td><td>20–33</td><td class="sku">CS96008COEO</td><td>1</td><td class="pr">46,900</td><td><button class="enq" onclick="enq('MU-G30 20HP CS96008COEO')">📞 Enquire</button></td></tr>
+<tr><td>MU-G30 FASD</td><td class="hpv">30</td><td>30–50</td><td class="sku">CS96008COGO</td><td>1</td><td class="pr">48,000</td><td><button class="enq" onclick="enq('MU-G30 30HP CS96008COGO')">📞 Enquire</button></td></tr>
+<tr><td>MU-G40 FASD</td><td class="hpv">40</td><td>36–60</td><td class="sku">CS90908LOTO</td><td>1</td><td class="pr">57,600</td><td><button class="enq" onclick="enq('MU-G40 40HP CS90908LOTO')">📞 Enquire</button></td></tr>
+<tr><td>MU-G50 FASD</td><td class="hpv">50</td><td>45–75</td><td class="sku">CS96009COJO</td><td>1</td><td class="pr">78,000</td><td><button class="enq" onclick="enq('MU-G50 50HP CS96009COJO')">📞 Enquire</button></td></tr>
+<tr><td>MU-G75 FASD</td><td class="hpv">75</td><td>66–110</td><td class="sku">CS96451LOKO</td><td>1</td><td class="pr">1,08,000</td><td><button class="enq" onclick="enq('MU-G75 75HP CS96451LOKO')">📞 Enquire</button></td></tr>
+</tbody></table></div>
+
+<!-- MU-GW -->
+<div class="ps" id="ps-mugw" data-kw="mu-g10w mu-g20w mu-g30w wlc water level controller cs91037 cs91038 cs91039 dol fasd built-in 5hp 10hp 20hp 30hp">
+<div class="ps-hd"><div class="ps-ic">🌊</div><div class="ps-info"><h2>MU-GW — Submersible with Built-in WLC</h2><p>Built-in Water Level Controller. Automatic pump cut-off. No separate WLC needed. 3–30 HP.</p><div class="ps-tags"><span class="ptag g">HSN 8536</span><span class="ptag">3–30 HP</span><span class="ptag g">Built-in WLC</span></div></div></div>
+<table class="ptbl"><thead><tr><th>Type</th><th>HP</th><th>Relay (A)</th><th>Cat No (360V)</th><th>Cat No (415V)</th><th>Pkg</th><th>MRP (₹)</th><th>Action</th></tr></thead><tbody>
+<tr><td>MU-G10W DOL</td><td class="hpv">5</td><td>6–10</td><td class="sku">CS91037COVO</td><td class="sku">CS91037DOVO</td><td>1</td><td class="pr">18,280</td><td><button class="enq" onclick="enq('MU-G10W 5HP CS91037DOVO')">📞 Enquire</button></td></tr>
+<tr><td>MU-G10W DOL</td><td class="hpv">10</td><td>13–21</td><td class="sku">CS91037COCO</td><td class="sku">CS91037DOCO</td><td>1</td><td class="pr">18,280</td><td><button class="enq" onclick="enq('MU-G10W 10HP CS91037DOCO')">📞 Enquire</button></td></tr>
+<tr><td>MU-G20W FASD</td><td class="hpv">20</td><td>13–21</td><td class="sku">CS91038COCO</td><td class="sku">CS91038DOCO</td><td>1</td><td class="pr">31,220</td><td><button class="enq" onclick="enq('MU-G20W 20HP CS91038DOCO')">📞 Enquire</button></td></tr>
+<tr><td>MU-G20W FASD (H)</td><td class="hpv">20</td><td>20–32</td><td class="sku">CS91038COEO</td><td class="sku">CS91038DOEO</td><td>1</td><td class="pr">37,330</td><td><button class="enq" onclick="enq('MU-G20W Heavy 20HP CS91038DOEO')">📞 Enquire</button></td></tr>
+<tr><td>MU-G30W FASD</td><td class="hpv">30</td><td>30–50</td><td class="sku">CS91039COGO</td><td>—</td><td>1</td><td class="pr">57,400</td><td><button class="enq" onclick="enq('MU-G30W 30HP CS91039COGO')">📞 Enquire</button></td></tr>
+</tbody></table></div>
+
+<!-- MU-GS SMART -->
+<div class="ps" id="ps-mugs" data-kw="mu-gs smart mu-g6s mu-g10s mu-g15s mu-g20s mu-g25s mu-g30s mu-g40s mu-g50s mu-g75s iot theft app ivrs hindi kannada marathi north south east 6hp 10hp 15hp 20hp 25hp 30hp 50hp 75hp">
+<div class="ps-banner" style="background:linear-gradient(135deg,#0a0020,#1a0040)"><div class="ps-banner-cnt"><div class="ps-banner-ic">🤖</div><div><h3>⭐ MU-GS Smart Controllers — Control from Anywhere</h3><p>IoT pump control via SMS/App/IVRS. Theft alert. 11 languages. 6–75 HP.</p></div><a href="tel:8126868752" style="margin-left:auto;flex-shrink:0;display:inline-flex;align-items:center;gap:5px;background:#a78bfa;color:#000;font-size:11px;font-weight:700;padding:6px 12px;border-radius:7px;text-decoration:none">📞 Order Now</a></div></div>
+<div class="ps-hd"><div class="ps-ic">🤖</div><div class="ps-info"><h2>MU-GS Smart Controllers</h2><p>IoT-enabled. Built-in MCB/MCCB, theft alert, dry run, voltage/current metering, RTC timer, 11 languages.</p><div class="ps-tags"><span class="ptag g">HSN 8536</span><span class="ptag">6–75 HP</span><span class="ptag g">IoT Smart</span><span class="ptag">Theft Alert</span><span class="ptag">11 Languages</span></div></div></div>
+<table class="ptbl"><thead><tr><th>Model</th><th>Type</th><th>HP</th><th>Region</th><th>Cat No (360V-W)</th><th>Cat No (400/440V)</th><th>MRP (₹)</th><th>Action</th></tr></thead><tbody>
+<tr><td>MU-G6S</td><td>DOL</td><td class="hpv">6</td><td>North</td><td class="sku">CS91206CNDO</td><td class="sku">CS91206PNDO</td><td class="pr">24,550</td><td><button class="enq" onclick="enq('MU-G6S DOL 6HP North CS91206PNDO')">📞 Enquire</button></td></tr>
+<tr><td>MU-G6S</td><td>DOL</td><td class="hpv">6</td><td>South</td><td class="sku">CS91206CSDO</td><td class="sku">CS91206PSDO</td><td class="pr">24,550</td><td><button class="enq" onclick="enq('MU-G6S DOL 6HP South CS91206PSDO')">📞 Enquire</button></td></tr>
+<tr><td>MU-G6S</td><td>DOL</td><td class="hpv">6</td><td>East</td><td class="sku">CS91206CEDO</td><td class="sku">CS91206PEDO</td><td class="pr">24,550</td><td><button class="enq" onclick="enq('MU-G6S DOL 6HP East')">📞 Enquire</button></td></tr>
+<tr><td>MU-G10S</td><td>DOL</td><td class="hpv">10</td><td>North</td><td class="sku">CS91205CNDO</td><td class="sku">CS91205DNDO</td><td class="pr">25,990</td><td><button class="enq" onclick="enq('MU-G10S 10HP North CS91205DNDO')">📞 Enquire</button></td></tr>
+<tr><td>MU-G10S</td><td>DOL</td><td class="hpv">10</td><td>South</td><td class="sku">CS91205CSDO</td><td class="sku">CS91205DSDO</td><td class="pr">25,990</td><td><button class="enq" onclick="enq('MU-G10S 10HP South CS91205DSDO')">📞 Enquire</button></td></tr>
+<tr><td>MU-G15S</td><td>FASD</td><td class="hpv">15</td><td>North</td><td class="sku">CS91529CNDO</td><td class="sku">CS91529PNDO</td><td class="pr">33,500</td><td><button class="enq" onclick="enq('MU-G15S 15HP North CS91529PNDO')">📞 Enquire</button></td></tr>
+<tr><td>MU-G15S</td><td>FASD</td><td class="hpv">15</td><td>South</td><td class="sku">CS91529CSDO</td><td class="sku">CS91529PSDO</td><td class="pr">33,500</td><td><button class="enq" onclick="enq('MU-G15S 15HP South CS91529PSDO')">📞 Enquire</button></td></tr>
+<tr><td>MU-G20S</td><td>FASD</td><td class="hpv">20</td><td>North</td><td class="sku">CS91531CNDO</td><td class="sku">CS91531DNDO</td><td class="pr">37,100</td><td><button class="enq" onclick="enq('MU-G20S 20HP North CS91531DNDO')">📞 Enquire</button></td></tr>
+<tr><td>MU-G20S</td><td>FASD</td><td class="hpv">20</td><td>South</td><td class="sku">CS91531CSDO</td><td class="sku">CS91531DSDO</td><td class="pr">37,100</td><td><button class="enq" onclick="enq('MU-G20S 20HP South CS91531DSDO')">📞 Enquire</button></td></tr>
+<tr><td>MU-G25S</td><td>FASD</td><td class="hpv">25</td><td>North</td><td class="sku">CS91533CNFO</td><td class="sku">CS91533DNFO</td><td class="pr">51,500</td><td><button class="enq" onclick="enq('MU-G25S 25HP North CS91533DNFO')">📞 Enquire</button></td></tr>
+<tr><td>MU-G30S</td><td>FASD</td><td class="hpv">30</td><td>North</td><td colspan="2" class="sku">CS91651LNGO (380V)</td><td class="pr">69,000</td><td><button class="enq" onclick="enq('MU-G30S 30HP North CS91651LNGO')">📞 Enquire</button></td></tr>
+<tr><td>MU-G40S</td><td>FASD</td><td class="hpv">40</td><td>North</td><td colspan="2" class="sku">CS91652LNTO (380V)</td><td class="pr">78,000</td><td><button class="enq" onclick="enq('MU-G40S 40HP North CS91652LNTO')">📞 Enquire</button></td></tr>
+<tr><td>MU-G50S</td><td>FASD</td><td class="hpv">50</td><td>North</td><td colspan="2" class="sku">CS91653LNJO (380V)</td><td class="pr">1,13,000</td><td><button class="enq" onclick="enq('MU-G50S 50HP North CS91653LNJO')">📞 Enquire</button></td></tr>
+<tr><td>MU-G75S</td><td>FASD</td><td class="hpv">75</td><td>North</td><td colspan="2" class="sku">CS91654LNKO (380V)</td><td class="pr">1,44,000</td><td><button class="enq" onclick="enq('MU-G75S 75HP North CS91654LNKO')">📞 Enquire</button></td></tr>
+</tbody></table></div>
+
+<!-- SINGLE PHASE -->
+<div class="ps" id="ps-singleph" data-kw="single phase mu-2p mf1 cs90319 1 phase 230v dol 0.125hp 0.5hp 1hp 2hp 3hp monoblock">
+<div class="ps-hd"><div class="ps-ic">⚡</div><div class="ps-info"><h2>Single Phase DOL Starters</h2><p>MU-2P (0.125–3 HP) for 1Ø 230V pump/motor applications.</p><div class="ps-tags"><span class="ptag g">HSN 8536</span><span class="ptag">0.125–3 HP</span><span class="ptag">1Ø 230V</span></div></div></div>
+<table class="ptbl"><thead><tr><th>HP</th><th>Relay (A)</th><th>Cat. No.</th><th>Pkg</th><th>MRP (₹)</th><th>Action</th></tr></thead><tbody>
+<tr><td class="hpv">0.125</td><td>1–1.6</td><td class="sku">CS90319KOMO</td><td>1</td><td class="pr">2,980</td><td><button class="enq" onclick="enq('MU-2P 0.125HP CS90319KOMO')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">0.5</td><td>2.5–4</td><td class="sku">CS90319KORO</td><td>1</td><td class="pr">2,980</td><td><button class="enq" onclick="enq('MU-2P 0.5HP CS90319KORO')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">1</td><td>6–10</td><td class="sku">CS90319KOVO</td><td>1</td><td class="pr">2,980</td><td><button class="enq" onclick="enq('MU-2P 1HP CS90319KOVO')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">2</td><td>9–14</td><td class="sku">CS90319KOAO</td><td>1</td><td class="pr">2,980</td><td><button class="enq" onclick="enq('MU-2P 2HP CS90319KOAO')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">3</td><td>13–22</td><td class="sku">CS90319KODO</td><td>1</td><td class="pr">3,030</td><td><button class="enq" onclick="enq('MU-2P 3HP CS90319KODO')">📞 Enquire</button></td></tr>
+</tbody></table></div>
+
+<!-- MF-G1 -->
+<div class="ps" id="ps-mfg1" data-kw="mf-g1 single phase submersible ss97728 ss97730 ss97731 ss97732 ammeter voltmeter capacitor 0.5hp 1hp 1.5hp 2hp">
+<div class="ps-hd"><div class="ps-ic">💧</div><div class="ps-info"><h2>MF-G1 Single Phase Submersible</h2><p>0.5–2 HP. Ammeter+Voltmeter or Ammeter Only. Multiple run capacitor options.</p><div class="ps-tags"><span class="ptag g">HSN 8536</span><span class="ptag">0.5–2 HP</span><span class="ptag">1Ø 230V</span></div></div></div>
+<table class="ptbl"><thead><tr><th>Variant</th><th>HP</th><th>Relay (A)</th><th>Cat. No.</th><th>Run Cap</th><th>MRP (₹)</th><th>Action</th></tr></thead><tbody>
+<tr><td>A+V</td><td class="hpv">0.5</td><td>6.5–11</td><td class="sku">SS97728OOVE</td><td>1×36µF</td><td class="pr">4,940</td><td><button class="enq" onclick="enq('MF-G1 0.5HP A+V SS97728OOVE')">📞 Enquire</button></td></tr>
+<tr><td>A Only</td><td class="hpv">0.5</td><td>6.5–11</td><td class="sku">SS97734OOVC</td><td>1×25µF</td><td class="pr">4,560</td><td><button class="enq" onclick="enq('MF-G1 0.5HP AOnly SS97734OOVC')">📞 Enquire</button></td></tr>
+<tr><td>A+V</td><td class="hpv">1</td><td>6.5–11</td><td class="sku">SS97730OOVE</td><td>1×36µF</td><td class="pr">5,170</td><td><button class="enq" onclick="enq('MF-G1 1HP A+V SS97730OOVE')">📞 Enquire</button></td></tr>
+<tr><td>A+V</td><td class="hpv">1.5</td><td>6.5–11</td><td class="sku">SS97731OOVG</td><td>1×50µF</td><td class="pr">5,320</td><td><button class="enq" onclick="enq('MF-G1 1.5HP A+V SS97731OOVG')">📞 Enquire</button></td></tr>
+<tr><td>A+V</td><td class="hpv">2</td><td>12–20</td><td class="sku">SS97732OOCG</td><td>1×50µF</td><td class="pr">5,410</td><td><button class="enq" onclick="enq('MF-G1 2HP A+V SS97732OOCG')">📞 Enquire</button></td></tr>
+</tbody></table></div>
+
+<!-- MR-G2/G3 -->
+<div class="ps" id="ps-mrg" data-kw="mr-g2 mr-g3 single phase submersible 0.5hp 1hp 1.5hp 2hp 3hp 5hp capacitor start run ammeter">
+<div class="ps-hd"><div class="ps-ic">💧</div><div class="ps-info"><h2>MR-G2 / MR-G3 Controllers</h2><p>Single-phase submersible 0.5–5 HP. Multiple start/run cap configs. A+V or A Only.</p><div class="ps-tags"><span class="ptag g">HSN 8536</span><span class="ptag">0.5–5 HP</span><span class="ptag">1Ø 230V</span></div></div></div>
+<table class="ptbl"><thead><tr><th>Type</th><th>HP</th><th>Relay (A)</th><th>Start Cap</th><th>Run Cap</th><th>A+V (₹)</th><th>A Only (₹)</th><th>Action</th></tr></thead><tbody>
+<tr><td>MR-G2</td><td class="hpv">0.5</td><td>4–10</td><td>275V 80–100µF</td><td>440V 1×25–36µF</td><td class="pr">5,750</td><td class="pr">5,460</td><td><button class="enq" onclick="enq('MR-G2 0.5HP')">📞 Enquire</button></td></tr>
+<tr><td>MR-G2</td><td class="hpv">1</td><td>6–14</td><td>275V 100–150µF</td><td>440V 1×36–50µF</td><td class="pr">6,240</td><td class="pr">5,950</td><td><button class="enq" onclick="enq('MR-G2 1HP')">📞 Enquire</button></td></tr>
+<tr><td>MR-G2</td><td class="hpv">1.5</td><td>9–18</td><td>275V 120–200µF</td><td>440V 1×50–72µF</td><td class="pr">6,730</td><td class="pr">6,490</td><td><button class="enq" onclick="enq('MR-G2 1.5HP')">📞 Enquire</button></td></tr>
+<tr><td>MR-G2</td><td class="hpv">2</td><td>11–22</td><td>275V 150–250µF</td><td>440V 2×36–72µF</td><td class="pr">7,080</td><td class="pr">6,760</td><td><button class="enq" onclick="enq('MR-G2 2HP')">📞 Enquire</button></td></tr>
+<tr><td>MR-G2</td><td class="hpv">3</td><td>13–26</td><td>275V 200–250µF</td><td>440V 2×50µF</td><td class="pr">7,800</td><td class="pr">7,400</td><td><button class="enq" onclick="enq('MR-G2 3HP')">📞 Enquire</button></td></tr>
+<tr><td>MR-G3</td><td class="hpv">5</td><td>20–32</td><td>275V 200–250µF</td><td>440V 3×50µF</td><td class="pr">11,190</td><td>—</td><td><button class="enq" onclick="enq('MR-G3 5HP CS90490BEEJ')">📞 Enquire</button></td></tr>
+</tbody></table></div>
+
+<!-- MR-Gi Digital -->
+<div class="ps" id="ps-mrgi" data-kw="mr-gi mr-gib mr-gia digital single phase manual auto wlc cs91321 cs91322 cs91323 cs91324 cs91325 dry run rtc 0.5hp 1hp 1.5hp 2hp 3hp">
+<div class="ps-banner" style="background:linear-gradient(135deg,#001510,#002a20)"><div class="ps-banner-cnt"><div class="ps-banner-ic">📟</div><div><h3>MR-Gi Digital Single Phase Controllers</h3><p>Microcontroller-based. RTC timer, dry run, UV/OV. Manual, Auto &amp; Auto+WLC variants. 0.5–3 HP.</p></div></div></div>
+<div class="ps-hd"><div class="ps-ic">📟</div><div class="ps-info"><h2>MR-Gi Digital Single Phase</h2><p>Digital display, dry run, RTC+hour timers, bypass mode. Manual (MR-Gi), Auto (MR-GiB), Auto+WLC (MR-GiA).</p><div class="ps-tags"><span class="ptag g">HSN 8536</span><span class="ptag">0.5–3 HP</span><span class="ptag g">Digital Display</span><span class="ptag">RTC Timer</span></div></div></div>
+<table class="ptbl"><thead><tr><th>HP</th><th>Sample Cat. No.</th><th>Manual (₹)</th><th>Auto (₹)</th><th>Auto+WLC (₹)</th><th>Action</th></tr></thead><tbody>
+<tr><td class="hpv">0.5</td><td class="sku">CS91321NAOC</td><td class="pr">5,000</td><td class="pr">6,300</td><td class="pr">6,950</td><td><button class="enq" onclick="enq('MR-Gi 0.5HP Digital')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">1</td><td class="sku">CS91322NBOE</td><td class="pr">5,270</td><td class="pr">6,530</td><td class="pr">7,200</td><td><button class="enq" onclick="enq('MR-Gi 1HP Digital')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">1.5</td><td class="sku">CS91323NCOG</td><td class="pr">5,530</td><td class="pr">6,770</td><td class="pr">7,420</td><td><button class="enq" onclick="enq('MR-Gi 1.5HP Digital')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">2</td><td class="sku">CS91324NDOF</td><td class="pr">5,750</td><td class="pr">7,000</td><td class="pr">7,650</td><td><button class="enq" onclick="enq('MR-Gi 2HP Digital')">📞 Enquire</button></td></tr>
+<tr><td class="hpv">3</td><td class="sku">CS91325NEOH</td><td class="pr">6,000</td><td class="pr">7,250</td><td class="pr">7,900</td><td><button class="enq" onclick="enq('MR-Gi 3HP Digital')">📞 Enquire</button></td></tr>
+</tbody></table></div>
+
+<!-- M-POWER -->
+<div class="ps" id="ps-mpower" data-kw="m-power pro m-power++ m-power+ cs91313 cs92145 gsm0301 gsm 4g volte sms ivrs app remote pump north south east wireless module">
+<div class="ps-hd"><div class="ps-ic">📡</div><div class="ps-info"><h2>M-POWER Wireless Modules</h2><p>Add-on remote pump control. M-POWER Pro (GSM 3-wire), M-POWER++ (4G LTE), M-POWER+ (GSM). SMS/IVRS/App.</p><div class="ps-tags"><span class="ptag g">HSN 8536/8538</span><span class="ptag g">4G LTE</span><span class="ptag">Multi-Language</span></div></div></div>
+<table class="ptbl"><thead><tr><th>Product</th><th>Technology</th><th>Region</th><th>Cat. No.</th><th>MRP (₹)</th><th>Action</th></tr></thead><tbody>
+<tr><td>M-POWER Pro</td><td>GSM 3-wire</td><td>North &amp; West</td><td class="sku">CS91313OOOO</td><td class="pr">9,600</td><td><button class="enq" onclick="enq('M-POWER Pro North CS91313OOOO')">📞 Enquire</button></td></tr>
+<tr><td>M-POWER Pro</td><td>GSM 3-wire</td><td>South</td><td class="sku">CS91313OOSO</td><td class="pr">9,600</td><td><button class="enq" onclick="enq('M-POWER Pro South CS91313OOSO')">📞 Enquire</button></td></tr>
+<tr><td>M-POWER Pro</td><td>GSM 3-wire</td><td>East</td><td class="sku">CS91313OOEO</td><td class="pr">9,600</td><td><button class="enq" onclick="enq('M-POWER Pro East CS91313OOEO')">📞 Enquire</button></td></tr>
+<tr><td>M-POWER++</td><td>4G LTE/VoLTE + 2G</td><td>North &amp; West</td><td class="sku">CS92145OONO</td><td class="pr">6,830</td><td><button class="enq" onclick="enq('M-POWER++ North CS92145OONO')">📞 Enquire</button></td></tr>
+<tr><td>M-POWER++</td><td>4G LTE/VoLTE + 2G</td><td>South</td><td class="sku">CS92145OOSO</td><td class="pr">6,830</td><td><button class="enq" onclick="enq('M-POWER++ South CS92145OOSO')">📞 Enquire</button></td></tr>
+<tr><td>M-POWER+</td><td>GSM</td><td>North &amp; West</td><td class="sku">GSM0301OONO</td><td class="pr">5,760</td><td><button class="enq" onclick="enq('M-POWER+ North GSM0301OONO')">📞 Enquire</button></td></tr>
+<script>
+// CURSOR
+var cur=document.getElementById('cur'),ring=document.getElementById('ring');
+var mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',function(e){
+  mx=e.clientX;my=e.clientY;
+  cur.style.transform='translate('+(mx-5)+'px,'+(my-5)+'px)';
+});
+(function animRing(){rx+=(mx-rx-16)*.12;ry+=(my-ry-16)*.12;ring.style.transform='translate('+rx+'px,'+ry+'px)';requestAnimationFrame(animRing);})();
+
+// SCROLL
+window.addEventListener('scroll',function(){
+  var sc=document.documentElement.scrollTop;
+  var sh=document.documentElement.scrollHeight-window.innerHeight;
+  document.getElementById('prog').style.width=(sc/sh*100)+'%';
+  document.getElementById('nav').classList.toggle('solid',sc>60);
+  document.getElementById('btt').classList.toggle('on',sc>500);
+  ['home','products','about','catalog','contact'].forEach(function(id){
+    var el=document.getElementById(id);
+    if(!el)return;
+    var link=document.querySelector('.nav-link[href="#'+id+'"]');
+    if(!link)return;
+    var r=el.getBoundingClientRect();
+    link.classList.toggle('on',r.top<=80&&r.bottom>80);
+  });
+});
+
+// HERO COUNTER
+function animNum(el){
+  var t=parseInt(el.dataset.target||0);
+  var sup=el.querySelector('sup');
+  var supH=sup?sup.outerHTML:'';
+  var c=0,inc=t/60;
+  var tm=setInterval(function(){c=Math.min(c+inc,t);el.innerHTML=Math.round(c)+supH;if(c>=t)clearInterval(tm);},25);
+}
+setTimeout(function(){document.querySelectorAll('.hero-stats [data-target]').forEach(animNum);},900);
+
+// REVEAL
+var ro=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('vis');});},{threshold:.07});
+document.querySelectorAll('.reveal,.reveal-l,.reveal-r,.reveal-s').forEach(function(el){ro.observe(el);});
+var so=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('vis');});},{threshold:.05});
+document.querySelectorAll('.stagger').forEach(function(el){so.observe(el);});
+
+// COUNTERS
+var counted=new Set();
+new IntersectionObserver(function(e){e.forEach(function(x){
+  if(x.isIntersecting)x.target.querySelectorAll('[data-count]').forEach(function(n){
+    if(!counted.has(n)){counted.add(n);
+      var t=parseInt(n.dataset.count);
+      var sup=n.querySelector('sup');var supH=sup?sup.outerHTML:'';
+      var c=0,inc=t/70;
+      var tm=setInterval(function(){c=Math.min(c+inc,t);n.innerHTML=Math.round(c)+supH;if(c>=t)clearInterval(tm);},22);
+    }
+  });
+});},{threshold:.2}).observe(document.getElementById('cnt-sec'));
+
+// CATALOG FILTER
+var activeS='all',searchQ='',quickQ='';
+
+// Show all sections immediately
+document.querySelectorAll('.ps').forEach(function(s){s.style.display='block';s.style.opacity='1';s.style.visibility='visible';});
+
+function doFilter(){
+  var q=(searchQ+' '+quickQ).toLowerCase().trim();
+  var secs=document.querySelectorAll('.ps');
+  var v=0;
+  secs.forEach(function(s){
+    var kw=(s.dataset.kw||'').toLowerCase();
+    var txt=s.textContent.toLowerCase();
+    var id=s.id.replace('ps-','');
+    var sm=activeS==='all'||id===activeS||id.startsWith(activeS);
+    var qm=!q||(kw+' '+txt).includes(q);
+    s.style.display=(sm&&qm)?'block':'none';
+    if(sm&&qm)v++;
+  });
+  var nr=document.getElementById('no-res');
+  if(nr)nr.style.display=v===0?'block':'none';
+  var rc=document.getElementById('res-ct');
+  if(rc)rc.textContent=v+' section'+(v!==1?'s':'');
+}
+
+document.getElementById('top-q').addEventListener('input',function(){searchQ=this.value;doFilter();});
+document.getElementById('csb-q').addEventListener('input',function(){
+  var v=this.value.toLowerCase();
+  document.querySelectorAll('.csb-item').forEach(function(i){i.style.display=i.textContent.toLowerCase().includes(v)||!v?'':'none';});
+});
+
+document.querySelectorAll('.csb-item').forEach(function(item){
+  item.addEventListener('click',function(){
+    document.querySelectorAll('.csb-item').forEach(function(n){n.classList.remove('on');});
+    this.classList.add('on');
+    activeS=this.dataset.s;
+    searchQ='';quickQ='';
+    document.getElementById('top-q').value='';
+    document.querySelectorAll('.pill').forEach(function(p){p.classList.remove('on');});
+    document.querySelector('.pill').classList.add('on');
+    doFilter();
+    setTimeout(function(){document.getElementById('catalog').scrollIntoView({behavior:'smooth',block:'start'});},80);
+  });
+});
+
+function filterSec(s){
+  activeS=s;
+  document.querySelectorAll('.csb-item').forEach(function(n){n.classList.toggle('on',n.dataset.s===s);});
+  doFilter();
+  setTimeout(function(){document.getElementById('catalog').scrollIntoView({behavior:'smooth'});},80);
+}
+function qpill(btn,val){
+  document.querySelectorAll('.pill').forEach(function(b){b.classList.remove('on');});
+  btn.classList.add('on');quickQ=val;doFilter();
+}
+function setView(v){
+  document.getElementById('vb-l').classList.toggle('on',v==='list');
+  document.getElementById('vb-g').classList.toggle('on',v==='grid');
+}
+function enq(product){
+  document.getElementById('toast-msg').textContent='Enquiry: '+product+' — Call 81268 68752 to order!';
+  var t=document.getElementById('toast');
+  t.classList.add('on');
+  setTimeout(function(){t.classList.remove('on');},4000);
+}
+
+// INIT
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('.ps').forEach(function(s){s.style.display='block';s.style.opacity='1';});
+  doFilter();
+});
+setTimeout(function(){
+  document.querySelectorAll('.ps').forEach(function(s){s.style.display='block';s.style.opacity='1';});
+  doFilter();
+},200);
+</script>
+<!-- WLC -->
+<div class="ps" id="ps-autowlc" data-kw="auto wlc szlc szlc1 szlc3 water level controller xm81060 xm81062 xm81065 xm81066 xm81068 xm81052 xm81051 single three phase tank double probe">
+<div class="ps-hd"><div class="ps-ic">🌊</div><div class="ps-info"><h2>Auto WLC — Water Level Controllers</h2><p>SzLC, SzLC1 and SzLC3 for automatic tank level control. 1Ø &amp; 3Ø. Dual/single tank options.</p><div class="ps-tags"><span class="ptag g">HSN 9032</span><span class="ptag">1Ø &amp; 3Ø</span><span class="ptag">Dual/Single Tank</span></div></div></div>
+<table class="ptbl"><thead><tr><th>Description</th><th>Cat. No.</th><th>Pkg</th><th>MRP (₹)</th><th>Action</th></tr></thead><tbody>
+<tr><td>SzLC — 1Ø Double Tank</td><td class="sku">XM81060OOOO</td><td>1</td><td class="pr">2,260</td><td><button class="enq" onclick="enq('SzLC 1Ph Double Tank')">📞 Enquire</button></td></tr>
+<tr><td>SzLC1 — 1Ø Starter+Cap Double</td><td class="sku">XM81062OOOO</td><td>1</td><td class="pr">2,790</td><td><button class="enq" onclick="enq('SzLC1 XM81062OOOO')">📞 Enquire</button></td></tr>
+<tr><td>SzLC — 1Ø Single Tank</td><td class="sku">XM81066OOOO</td><td>1</td><td class="pr">2,220</td><td><button class="enq" onclick="enq('SzLC Single Tank XM81066OOOO')">📞 Enquire</button></td></tr>
+<tr><td>SzLC3 — 3Ø Double Tank</td><td class="sku">XM81065OOOO</td><td>1</td><td class="pr">3,660</td><td><button class="enq" onclick="enq('SzLC3 3Ph Double XM81065OOOO')">📞 Enquire</button></td></tr>
+<tr><td>SzLC3 — 3Ø Single Tank</td><td class="sku">XM81068OOOO</td><td>1</td><td class="pr">3,570</td><td><button class="enq" onclick="enq('SzLC3 3Ph Single XM81068OOOO')">📞 Enquire</button></td></tr>
+<tr><td>WLC 240V standalone (Double Tank)</td><td class="sku">XM81052OOOO</td><td>1</td><td class="pr">1,600</td><td><button class="enq" onclick="enq('WLC 240V XM81052OOOO')">📞 Enquire</button></td></tr>
+<tr><td>WLC Probes (set of 3)</td><td class="sku">XM81051OOOO</td><td>1</td><td class="pr">550</td><td><button class="enq" onclick="enq('WLC Probes 3pc XM81051OOOO')">📞 Enquire</button></td></tr>
+<tr><td>WLC Probes (set of 6)</td><td class="sku">XM81076OOOO</td><td>1</td><td class="pr">1,080</td><td><button class="enq" onclick="enq('WLC Probes 6pc XM81076OOOO')">📞 Enquire</button></td></tr>
+</tbody></table></div>
+
+<!-- SASDz5 -->
+<div class="ps" id="ps-sasdz5" data-kw="sasdz5 sz1a auto switch sppr xm81810 xm81811 xm81812 sasd 2 button 3 button single phase automatic">
+<div class="ps-hd"><div class="ps-ic">🔁</div><div class="ps-info"><h2>SASDz5 &amp; Sz1A Auto Switches</h2><p>SASDz5 converts SASD to FASD. Sz1A for single-phase automatic operation up to 3 HP.</p><div class="ps-tags"><span class="ptag g">HSN 9032</span><span class="ptag">SASD→FASD</span></div></div></div>
+<table class="ptbl"><thead><tr><th>Description</th><th>Cat. No.</th><th>Pkg</th><th>MRP (₹)</th><th>Action</th></tr></thead><tbody>
+<tr><td>SASDz5 for 2-Button SASD Starter</td><td class="sku">XM81810OOOO</td><td>1</td><td class="pr">1,820</td><td><button class="enq" onclick="enq('SASDz5 2-Button XM81810OOOO')">📞 Enquire</button></td></tr>
+<tr><td>SASDz5 for 3-Button SASD Starter</td><td class="sku">XM81811OOOO</td><td>1</td><td class="pr">1,820</td><td><button class="enq" onclick="enq('SASDz5 3-Button XM81811OOOO')">📞 Enquire</button></td></tr>
+<tr><td>Sz1A for Single Phase Starter</td><td class="sku">XM81812OOOO</td><td>1</td><td class="pr">1,720</td><td><button class="enq" onclick="enq('Sz1A Single Phase XM81812OOOO')">📞 Enquire</button></td></tr>
+</tbody></table></div>
+
+<!-- PROTECTOR -->
+<div class="ps" id="ps-prot" data-kw="alpha protector adsm vdsm cs90863 cs90875 dry run phase reversal voltage unbalance ammeter protection relay">
+<div class="ps-hd"><div class="ps-ic">🛡️</div><div class="ps-info"><h2>α-PROTECTOR (ADSM &amp; VDSM)</h2><p>Microcontroller-based protection relay with digital ammeter+voltmeter. Phase, dry run, OV/UV. Up to 40A.</p><div class="ps-tags"><span class="ptag g">HSN 8536</span><span class="ptag">Up to 40A</span><span class="ptag g">Current &amp; Voltage</span></div></div></div>
+<table class="ptbl"><thead><tr><th>Type</th><th>Description</th><th>Cat No (360V)</th><th>Cat No (415V)</th><th>MRP (₹)</th><th>Action</th></tr></thead><tbody>
+<tr><td>-ADSM</td><td>SPPR + Dry Run + VI meter (Current-based)</td><td class="sku">CS90863COOO</td><td class="sku">CS90863DOOO</td><td class="pr">4,300</td><td><button class="enq" onclick="enq('α-PROTECTOR ADSM CS90863DOOO')">📞 Enquire</button></td></tr>
+<tr><td>-VDSM</td><td>SPPR + Dry Run + VI meter (Voltage-based)</td><td class="sku">CS90875COOO</td><td class="sku">CS90875DOOO</td><td class="pr">4,300</td><td><button class="enq" onclick="enq('α-PROTECTOR VDSM CS90875DOOO')">📞 Enquire</button></td></tr>
+</tbody></table></div>
+
+<!-- MCB -->
+<div class="ps" id="ps-mcb" data-kw="mcb k-curve lk20 lk30 lk31 10a 16a 20a 25a 32a 40a 50a 63a 100a 125a 2 pole 3 pole agricultural short circuit pump protection submersible">
+<div class="ps-banner" style="background:linear-gradient(135deg,#0d0a1a,#1a0d30)"><div class="ps-banner-cnt"><div class="ps-banner-ic">⚡</div><div><h3>K-Curve MCBs — Agricultural Protection</h3><p>Purpose-built for submersible pump short-circuit protection. 10–15kA breaking capacity.</p></div></div></div>
+<div class="ps-hd"><div class="ps-ic">⚡</div><div class="ps-info"><h2>MCB K-Curve — Agricultural Pumps</h2><p>2-pole (10–32A) &amp; 3-pole (10–125A). 10–15kA breaking. Exclusively for submersible pump circuit protection.</p><div class="ps-tags"><span class="ptag g">HSN 8536</span><span class="ptag">10–125A</span><span class="ptag g">K-Curve</span><span class="ptag">10–15kA</span></div></div></div>
+<span class="sub-t">2-Pole MCBs (240V AC) · Packing: 6 pcs</span>
+<table class="ptbl"><thead><tr><th>Cat. No.</th><th>Rating</th><th>Poles</th><th>MRP (₹)</th><th>Action</th></tr></thead><tbody>
+<tr><td class="sku">LK20100K</td><td>10A</td><td>2P</td><td class="pr">995</td><td><button class="enq" onclick="enq('MCB K-Curve 2P 10A LK20100K')">📞 Enquire</button></td></tr>
+<tr><td class="sku">LK20160K</td><td>16A</td><td>2P</td><td class="pr">995</td><td><button class="enq" onclick="enq('MCB K-Curve 2P 16A LK20160K')">📞 Enquire</button></td></tr>
+<tr><td class="sku">LK20200K</td><td>20A</td><td>2P</td><td class="pr">995</td><td><button class="enq" onclick="enq('MCB K-Curve 2P 20A LK20200K')">📞 Enquire</button></td></tr>
+<tr><td class="sku">LK20250K</td><td>25A</td><td>2P</td><td class="pr">995</td><td><button class="enq" onclick="enq('MCB K-Curve 2P 25A LK20250K')">📞 Enquire</button></td></tr>
+<tr><td class="sku">LK20320K</td><td>32A</td><td>2P</td><td class="pr">995</td><td><button class="enq" onclick="enq('MCB K-Curve 2P 32A LK20320K')">📞 Enquire</button></td></tr>
+</tbody></table>
+<span class="sub-t">3-Pole MCBs (415V AC)</span>
+<table class="ptbl"><thead><tr><th>Cat. No.</th><th>Rating</th><th>Poles</th><th>Breaking</th><th>Pkg</th><th>MRP (₹)</th><th>Action</th></tr></thead><tbody>
+<tr><td class="sku">LK30100K</td><td>10A</td><td>3P</td><td>10kA</td><td>4</td><td class="pr">1,590</td><td><button class="enq" onclick="enq('MCB 3P 10A LK30100K')">📞 Enquire</button></td></tr>
+<tr><td class="sku">LK30200K</td><td>20A</td><td>3P</td><td>10kA</td><td>4</td><td class="pr">1,590</td><td><button class="enq" onclick="enq('MCB 3P 20A LK30200K')">📞 Enquire</button></td></tr>
+<tr><td class="sku">LK30320K</td><td>32A</td><td>3P</td><td>10kA</td><td>4</td><td class="pr">1,590</td><td><button class="enq" onclick="enq('MCB 3P 32A LK30320K')">📞 Enquire</button></td></tr>
+<tr><td class="sku">LK30400K</td><td>40A</td><td>3P</td><td>10kA</td><td>4</td><td class="pr">2,450</td><td><button class="enq" onclick="enq('MCB 3P 40A LK30400K')">📞 Enquire</button></td></tr>
+<tr><td class="sku">LK30500K</td><td>50A</td><td>3P</td><td>10kA</td><td>4</td><td class="pr">2,450</td><td><button class="enq" onclick="enq('MCB 3P 50A LK30500K')">📞 Enquire</button></td></tr>
+<tr><td class="sku">LK30630K</td><td>63A</td><td>3P</td><td>10kA</td><td>4</td><td class="pr">2,450</td><td><button class="enq" onclick="enq('MCB 3P 63A LK30630K')">📞 Enquire</button></td></tr>
+<tr><td class="sku">LK31000K</td><td>100A</td><td>3P</td><td>15kA</td><td>1</td><td class="pr">10,770</td><td><button class="enq" onclick="enq('MCB 3P 100A LK31000K')">📞 Enquire</button></td></tr>
+<tr><td class="sku">LK31250K</td><td>125A</td><td>3P</td><td>15kA</td><td>1</td><td class="pr">11,960</td><td><button class="enq" onclick="enq('MCB 3P 125A LK31250K')">📞 Enquire</button></td></tr>
+</tbody></table></div>
+
+<!-- MCCB -->
+<div class="ps" id="ps-mccb" data-kw="mccb dy125u em90983 em90813 25a 32a 40a 50a 63a 80a 100a 3 pole 10ka 415v pump thermal magnetic">
+<div class="ps-hd"><div class="ps-ic">🔌</div><div class="ps-info"><h2>DY125U MCCB — Pump Applications</h2><p>3-pole MCCBs 25–100A. 415V AC, 10kA breaking. Thermal-magnetic release. CE marked.</p><div class="ps-tags"><span class="ptag g">HSN 8536</span><span class="ptag">25–100A 3P</span><span class="ptag">10kA</span></div></div></div>
+<table class="ptbl"><thead><tr><th>Cat. No.</th><th>Rating</th><th>Description</th><th>MRP</th><th>Action</th></tr></thead><tbody>
+<tr><td class="sku">EM90983OODO</td><td>25A</td><td>DY125U 25A 3P 10kA</td><td><span class="por">POR</span></td><td><button class="enq" onclick="enq('MCCB DY125U 25A EM90983OODO')">📞 Enquire</button></td></tr>
+<tr><td class="sku">EM90983OOEO</td><td>32A</td><td>DY125U 32A 3P 10kA</td><td><span class="por">POR</span></td><td><button class="enq" onclick="enq('MCCB DY125U 32A EM90983OOEO')">📞 Enquire</button></td></tr>
+<tr><td class="sku">EM90983OOFO</td><td>40A</td><td>DY125U 40A 3P 10kA</td><td><span class="por">POR</span></td><td><button class="enq" onclick="enq('MCCB DY125U 40A EM90983OOFO')">📞 Enquire</button></td></tr>
+<tr><td class="sku">EM90983OOGO</td><td>50A</td><td>DY125U 50A 3P 10kA</td><td><span class="por">POR</span></td><td><button class="enq" onclick="enq('MCCB DY125U 50A EM90983OOGO')">📞 Enquire</button></td></tr>
+<tr><td class="sku">EM90983OOHO</td><td>63A</td><td>DY125U 63A 3P 10kA</td><td><span class="por">POR</span></td><td><button class="enq" onclick="enq('MCCB DY125U 63A EM90983OOHO')">📞 Enquire</button></td></tr>
+<tr><td class="sku">EM90813OOJO</td><td>80A</td><td>DY125U 80A 3P 10kA</td><td><span class="por">POR</span></td><td><button class="enq" onclick="enq('MCCB DY125U 80A EM90813OOJO')">📞 Enquire</button></td></tr>
+<tr><td class="sku">EM90813OOKO</td><td>100A</td><td>DY125U 100A 3P W/O SPRD</td><td><span class="por">POR</span></td><td><button class="enq" onclick="enq('MCCB DY125U 100A EM90813OOKO')">📞 Enquire</button></td></tr>
+</tbody></table></div>
+
+<!-- CAPACITORS -->
+<div class="ps" id="ps-caps" data-kw="capacitor power factor kvar 440v ltbca box agricultural self-healing metalized polypropylene 1 2 3 5 7.5 10 15 20 25 30 kvar pf correction">
+<div class="ps-hd"><div class="ps-ic">🔋</div><div class="ps-info"><h2>Power Factor Correction Capacitors</h2><p>Self-healing MPP film box capacitors. 440V, 1–30 kVAr. Reduces energy waste &amp; cable heating.</p><div class="ps-tags"><span class="ptag g">HSN 8532</span><span class="ptag">1–30 kVAr</span><span class="ptag">440V AC</span><span class="ptag g">Self-Healing MPP</span></div></div></div>
+<table class="ptbl"><thead><tr><th>Rating</th><th>Voltage</th><th>Cat. No.</th><th>MRP (₹)</th><th>Action</th></tr></thead><tbody>
+<tr><td>1 kVAr</td><td>440V</td><td class="sku">LTBCA301B2</td><td class="pr">250</td><td><button class="enq" onclick="enq('PF Cap 1kVAr LTBCA301B2')">📞 Enquire</button></td></tr>
+<tr><td>2 kVAr</td><td>440V</td><td class="sku">LTBCA302B2</td><td class="pr">480</td><td><button class="enq" onclick="enq('PF Cap 2kVAr LTBCA302B2')">📞 Enquire</button></td></tr>
+<tr><td>3 kVAr</td><td>440V</td><td class="sku">LTBCA303B2</td><td class="pr">725</td><td><button class="enq" onclick="enq('PF Cap 3kVAr LTBCA303B2')">📞 Enquire</button></td></tr>
+<tr><td>5 kVAr</td><td>440V</td><td class="sku">LTBCA305B2</td><td class="pr">1,215</td><td><button class="enq" onclick="enq('PF Cap 5kVAr LTBCA305B2')">📞 Enquire</button></td></tr>
+<tr><td>7.5 kVAr</td><td>440V</td><td class="sku">LTBCA307B2</td><td class="pr">1,825</td><td><button class="enq" onclick="enq('PF Cap 7.5kVAr LTBCA307B2')">📞 Enquire</button></td></tr>
+<tr><td>10 kVAr</td><td>440V</td><td class="sku">LTBCA310B2</td><td class="pr">2,435</td><td><button class="enq" onclick="enq('PF Cap 10kVAr LTBCA310B2')">📞 Enquire</button></td></tr>
+<tr><td>15 kVAr</td><td>440V</td><td class="sku">LTBCA315B2</td><td class="pr">3,640</td><td><button class="enq" onclick="enq('PF Cap 15kVAr LTBCA315B2')">📞 Enquire</button></td></tr>
+<tr><td>20 kVAr</td><td>440V</td><td class="sku">LTBCA320B2</td><td class="pr">4,855</td><td><button class="enq" onclick="enq('PF Cap 20kVAr LTBCA320B2')">📞 Enquire</button></td></tr>
+<tr><td>25 kVAr</td><td>440V</td><td class="sku">LTBCA325B2</td><td class="pr">6,065</td><td><button class="enq" onclick="enq('PF Cap 25kVAr LTBCA325B2')">📞 Enquire</button></td></tr>
+<tr><td>30 kVAr</td><td>440V</td><td class="sku">LTBCA330B2</td><td class="pr">7,265</td><td><button class="enq" onclick="enq('PF Cap 30kVAr LTBCA330B2')">📞 Enquire</button></td></tr>
+</tbody></table></div>
+
+<!-- SOLAR Px3000 -->
+<div class="ps" id="ps-solar" data-kw="solar px3000 mppt drive controller submersible monoblock irrigation solar pump 3 phase solar grid dual energy plug play">
+<div class="ps-banner" style="background:linear-gradient(135deg,#2e2400,#504000)"><div class="ps-banner-cnt"><div class="ps-banner-ic">☀️</div><div><h3>Solar Px3000 — Solar Drive Controller</h3><p>True MPPT technology. Works on cloudy days. Auto start/stop by sunlight intensity.</p></div></div></div>
+<div class="ps-hd"><div class="ps-ic">☀️</div><div class="ps-info"><h2>Solar Px3000 Drive Controller</h2><p>Advanced solar VFD for 3-phase submersible &amp; monoblock pumps. True MPPT, dual energy (solar + grid), plug-and-play, auto start/stop based on sunlight.</p><div class="ps-tags"><span class="ptag g">Lauritz Knudsen</span><span class="ptag g">Solar + Grid</span><span class="ptag">True MPPT</span><span class="ptag">3Ø Submersible</span></div></div></div>
+<table class="ptbl"><thead><tr><th>Feature</th><th>Specification</th></tr></thead><tbody>
+<tr><td style="font-weight:600;color:rgba(200,240,215,.8)">Technology</td><td>True MPPT (Maximum Power Point Tracking)</td></tr>
+<tr><td style="font-weight:600;color:rgba(200,240,215,.8)">Compatible Motors</td><td>3-Phase Submersible &amp; Monoblock Pump Motors</td></tr>
+<tr><td style="font-weight:600;color:rgba(200,240,215,.8)">Energy Source</td><td>Solar + Grid (Dual Energy — auto switchover)</td></tr>
+<tr><td style="font-weight:600;color:rgba(200,240,215,.8)">Auto Start/Stop</td><td>Based on sunlight intensity (fully automatic)</td></tr>
+<tr><td style="font-weight:600;color:rgba(200,240,215,.8)">Installation</td><td>Plug-and-play — no complex setup required</td></tr>
+<tr><td style="font-weight:600;color:rgba(200,240,215,.8)">Protection</td><td>Reverse polarity, over-current, dry run</td></tr>
+<tr><td style="font-weight:600;color:rgba(200,240,215,.8)">Pricing</td><td><button class="enq" onclick="enq('Solar Px3000 Drive Controller')">📞 Enquire for Pricing</button></td></tr>
+</tbody></table></div>
+
+        </div><!-- cat-body -->
+      </div><!-- cat-main -->
+    </div><!-- cat-layout -->
+  </div><!-- cat-ui -->
+</div><!-- container -->
+</section><!-- catalog-section -->
+
+<!-- ENQUIRY FORM + MAPS -->
+<section class="enq-sec" id="enquiry">
+<div class="container">
+  <div class="enq-grid">
+    <div class="reveal-l">
+      <div class="s-label">Get In Touch</div>
+      <h2 class="s-h2">ENQUIRY <em>FORM</em></h2>
+      <p class="s-p" style="margin-bottom:28px">अपनी जरूरत बताएं — हम सही product recommend करेंगे और price बताएंगे।<br>Share your requirement and we'll recommend the right product.</p>
+      <div class="enq-form">
+        <h3>📋 PRODUCT ENQUIRY</h3>
+        <p>Fill the form — we'll WhatsApp you back within 2 hours</p>
+        <div class="form-row">
+          <div class="form-group"><label>Your Name *</label><input type="text" id="enq-name" placeholder="आपका नाम / Your name"></div>
+          <div class="form-group"><label>Phone Number *</label><input type="tel" id="enq-phone" placeholder="WhatsApp number"></div>
+        </div>
+        <div class="form-group"><label>Product Interest</label>
+          <select id="enq-product">
+            <option value="">Select a category...</option>
+            <option>MK1/MK2/MK.i Starters</option>
+            <option>MU-G Submersible Controllers (3-phase)</option>
+            <option>MU-GS Smart IoT Controllers</option>
+            <option>MR-Gi Single Phase Controllers</option>
+            <option>M-POWER Remote Modules</option>
+            <option>SKN Bentex Oil Starters</option>
+            <option>MCB / MCCB / Protection Relay</option>
+            <option>PF Capacitors</option>
+            <option>Solar Px3000 Drive</option>
+            <option>Other / Not Sure</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Pump HP</label><input type="text" id="enq-hp" placeholder="e.g. 5 HP, 10 HP"></div>
+          <div class="form-group"><label>Quantity</label><input type="number" id="enq-qty" placeholder="Qty" min="1" value="1"></div>
+        </div>
+        <div class="form-group"><label>Message (optional)</label><textarea id="enq-msg" placeholder="कोई और जानकारी / Any other details..."></textarea></div>
+        <button class="form-submit" onclick="submitEnquiry()">💬 Send via WhatsApp <svg width="16" height="16" viewBox="0 0 24 24" fill="#000"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg></button>
+      </div>
+    </div>
+    <div class="enq-info reveal-r">
+      <div class="einfo-card"><div class="einfo-ic" style="background:rgba(245,158,11,.1)">📞</div><div><div class="einfo-title">Order Line</div><div class="einfo-val" style="color:var(--am)">81268 68752</div><div class="einfo-sub">Call / WhatsApp to place orders</div></div></div>
+      <div class="einfo-card"><div class="einfo-ic" style="background:rgba(0,232,122,.08)">🛠️</div><div><div class="einfo-title">Complaint / Support</div><div class="einfo-val" style="color:var(--g)">022-6932 7800</div><div class="einfo-sub">LK E&A after-sales helpline</div></div></div>
+      <div class="einfo-card"><div class="einfo-ic" style="background:rgba(14,165,233,.08)">📍</div><div><div class="einfo-title">Our Location</div><div class="einfo-val" style="color:var(--bl);font-size:13px">Agra, Uttar Pradesh</div><div class="einfo-sub">Serving customers Pan India</div></div></div>
+      <div class="map-embed">
+        <iframe src="https://maps.google.com/maps?q=Agra,+Uttar+Pradesh,+India&t=&z=13&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div style="margin-top:12px">
+        <button class="btn-g" style="width:100%;justify-content:center" onclick="openWiz()">🔍 Help Me Choose the Right Product</button>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+<div class="container">
+  <div class="ft-grid">
+    <div>
+      <div class="ft-logo"><div class="ft-logo-badge">IPS</div><div class="ft-logo-name">INFRA POWER SYSTEM</div></div>
+      <p class="ft-p">Authorised distributor of Lauritz Knudsen Electrical &amp; Automation. Serving farmers across India with genuine, high-quality electrical solutions since our founding.</p>
+      <div class="ft-badges"><span class="fb">✓ Authorised LK Distributor</span><span class="fb">Price List 01.02.2026</span><span class="fb">SKN Bentex Stocked</span></div>
+    </div>
+    <div>
+      <div class="ft-col"><h4>Contact Us</h4></div>
+      <a class="ft-cc" href="tel:8126868752"><div class="ft-cc-ic" style="background:rgba(245,158,11,.1)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 11 19.8 19.8 0 0 1 1.62 2.35 2 2 0 0 1 3.6 0h3a2 2 0 0 1 2 1.72c.127.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L7.59 7.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div><div class="ft-cc-lbl">Place an Order</div><div class="ft-cc-n a">81268 68752</div></div></a>
+      <a class="ft-cc" href="tel:02269327800"><div class="ft-cc-ic" style="background:rgba(0,232,122,.08)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00e87a" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg></div><div><div class="ft-cc-lbl">Complaint / Inquiry</div><div class="ft-cc-n g">022-6932 7800</div></div></a>
+    </div>
+    <div>
+      <div class="ft-col"><h4>Quick Links</h4></div>
+      <ul class="ft-links">
+        <li><a href="#products">Product Categories</a></li>
+        <li><a href="#catalog" onclick="filterSec('mk1');return false">MK1/MK2 Starters</a></li>
+        <li><a href="#catalog" onclick="filterSec('mug6');return false">Submersible Controllers</a></li>
+        <li><a href="#catalog" onclick="filterSec('mugs');return false">⭐ Smart Controllers</a></li>
+        <li><a href="#catalog" onclick="filterSec('skn-oil-3ph');return false">SKN Oil Starters</a></li>
+        <li><a href="#catalog" onclick="filterSec('mpower');return false">M-POWER Modules</a></li>
+        <li><a href="#catalog" onclick="filterSec('caps');return false">PF Capacitors</a></li>
+        <li><a href="#catalog" onclick="filterSec('solar');return false">☀️ Solar Px3000</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft-bot">
+    <p>© 2026 Infra Power System · All prices MRP (₹) · GST extra · E&amp;OE · Price list w.e.f. 01.02.2026</p>
+    <p>Authorised Distributor · Lauritz Knudsen Electrical &amp; Automation</p>
+  </div>
+</div>
+</footer>
+
+<div class="toast" id="toast"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--g)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span id="toast-msg">Enquiry noted!</span></div>
+<button class="back-top" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- WHATSAPP FLOATING BUTTON -->
+<a class="wa-btn" href="https://wa.me/918126868752?text=नमस्ते%20Infra%20Power%20System%2C%20मुझे%20एक%20product%20के%20बारे%20enquiry%20करनी%20है।" target="_blank" rel="noopener">
+  <span class="wa-tooltip">WhatsApp पर बात करें</span>
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.556 4.112 1.528 5.836L0 24l6.336-1.51A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.369l-.359-.213-3.72.887.918-3.618-.234-.372A9.818 9.818 0 0112 2.182c5.424 0 9.818 4.394 9.818 9.818 0 5.424-4.394 9.818-9.818 9.818z"/></svg>
+</a>
+
+<!-- PRODUCT WIZARD MODAL -->
+<div class="wizard-modal" id="wizModal">
+  <div class="wizard-box">
+    <div class="wiz-hd">
+      <div><h2>🔍 HELP ME CHOOSE</h2><p>सही product 3 सवालों में / Find the right product in 3 steps</p></div>
+      <button class="wiz-close" onclick="closeWiz()">✕</button>
+    </div>
+    <div class="wiz-body">
+      <div class="wiz-progress"><div class="wiz-dot" id="wd1"></div><div class="wiz-dot" id="wd2"></div><div class="wiz-dot" id="wd3"></div></div>
+      <!-- Step 1 -->
+      <div class="wiz-step active" id="ws1">
+        <div class="wiz-q">आपका pump किस phase का है? / What phase is your pump?</div>
+        <div class="wiz-sub">Most agricultural pumps are 3-phase. Check your electricity connection.</div>
+        <div class="wiz-opts">
+          <div class="wiz-opt" onclick="wizSel(1,'single','⚡ Single Phase')"><div class="wiz-opt-icon">⚡</div><div class="wiz-opt-title">Single Phase</div><div class="wiz-opt-sub">240V — 0.5 to 5 HP</div></div>
+          <div class="wiz-opt" onclick="wizSel(1,'three','🔌 Three Phase')"><div class="wiz-opt-icon">🔌</div><div class="wiz-opt-title">Three Phase</div><div class="wiz-opt-sub">415V — 3 to 75 HP</div></div>
+        </div>
+      </div>
+      <!-- Step 2 -->
+      <div class="wiz-step" id="ws2">
+        <div class="wiz-q">Pump कितने HP का है? / What is your pump HP?</div>
+        <div class="wiz-sub">यह जानकारी pump nameplate पर लिखी होती है।</div>
+        <div class="wiz-opts" id="hp-opts"></div>
+      </div>
+      <!-- Step 3 -->
+      <div class="wiz-step" id="ws3">
+        <div class="wiz-q">आप क्या feature चाहते हैं? / What feature do you need?</div>
+        <div class="wiz-sub">अपनी जरूरत के अनुसार चुनें।</div>
+        <div class="wiz-opts">
+          <div class="wiz-opt" onclick="wizSel(3,'basic','Basic Protection')"><div class="wiz-opt-icon">🛡️</div><div class="wiz-opt-title">Basic Protection</div><div class="wiz-opt-sub">SPPR, dry run, overload</div></div>
+          <div class="wiz-opt" onclick="wizSel(3,'smart','Smart / IoT')"><div class="wiz-opt-icon">📱</div><div class="wiz-opt-title">Smart / IoT Control</div><div class="wiz-opt-sub">Mobile app, SMS, theft alert</div></div>
+          <div class="wiz-opt" onclick="wizSel(3,'oil','Oil Starter')"><div class="wiz-opt-icon">🛢️</div><div class="wiz-opt-title">Oil Immersed Starter</div><div class="wiz-opt-sub">Traditional, heavy duty</div></div>
+          <div class="wiz-opt" onclick="wizSel(3,'solar','Solar')"><div class="wiz-opt-icon">☀️</div><div class="wiz-opt-title">Solar / MPPT Drive</div><div class="wiz-opt-sub">Solar + Grid dual energy</div></div>
+        </div>
+      </div>
+      <!-- Result -->
+      <div class="wiz-step" id="ws4">
+        <div class="wiz-result" id="wiz-result-box"></div>
+        <div class="wiz-actions">
+          <a class="wiz-btn wa" id="wiz-wa-btn" href="#" target="_blank">💬 WhatsApp पर Order करें</a>
+          <button class="wiz-btn sec" onclick="resetWiz()">🔄 फिर से चुनें</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- AI CHATBOT -->
+<button class="chat-toggle" id="chatToggle" onclick="toggleChat()" title="Chat with us">
+  <svg class="chat-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+  <svg class="close-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+</button>
+<div class="chat-window" id="chatWindow">
+  <div class="chat-hd">
+    <div class="chat-avatar">🤖</div>
+    <div class="chat-hd-info"><h4>Infra Power Assistant</h4><p>Hindi &amp; English · Powered by AI</p></div>
+    <button class="lang-switch" id="langBtn" onclick="toggleLang()">हिंदी</button>
+    <div class="chat-online"></div>
+  </div>
+  <div class="chat-msgs" id="chatMsgs">
+    <div class="msg bot">नमस्ते! 🙏 मैं Infra Power System का AI assistant हूँ। आप मुझसे pump starters, controllers, या किसी भी product के बारे में पूछ सकते हैं।<br><br>Hello! I'm the Infra Power AI assistant. Ask me about any product!</div>
+  </div>
+  <div class="chat-quick" id="quickChips">
+    <button class="qchip" onclick="sendQuick('मुझे 5HP 3-phase submersible pump के लिए controller चाहिए')">5HP 3-Phase</button>
+    <button class="qchip" onclick="sendQuick('Single phase 2HP pump ke liye kya chahiye?')">2HP Single Phase</button>
+    <button class="qchip" onclick="sendQuick('Smart IoT controller price batao')">Smart Controller</button>
+    <button class="qchip" onclick="sendQuick('SKN oil starter kya hota hai?')">Oil Starter</button>
+    <button class="qchip" onclick="sendQuick('Solar pump controller chahiye')">Solar</button>
+  </div>
+  <div class="chat-input-area">
+    <input class="chat-input" id="chatInput" type="text" placeholder="अपना सवाल लिखें / Type your question..." onkeydown="if(event.key==='Enter')sendChat()">
+    <button class="chat-send" onclick="sendChat()">➤</button>
+  </div>
+</div>
+</body>
+</html>
